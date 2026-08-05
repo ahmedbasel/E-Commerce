@@ -1,0 +1,97 @@
+<div class="container mt-5 pt-5 d-flex justify-content-center">
+  <div class="col-lg-5 col-md-8">
+
+    <div class="card ecommerce-card border-0 shadow-sm">
+      <div class="card-body p-4 p-md-5">
+
+        <div class="text-center mb-4">
+          <div class="bg-primary bg-opacity-10 d-inline-block p-3 rounded-circle mb-3">
+            <i class="bi bi-person-gear text-primary fs-3"></i>
+          </div>
+          <h4 class="fw-bold mb-1">{{ 'Account Details.Account-Details' | translate }}
+          </h4>
+          <p class="text-muted small">{{ 'Account Details.info' | translate }}</p>
+        </div>
+
+        <form [formGroup]="updatedata" (ngSubmit)="getdata(updatedata)">
+
+          <div class="mb-3">
+            <label class="form-label small fw-bold text-dark">{{ 'Account Details.Full-Name' | translate }}</label>
+            <div class="input-group">
+              <span class="input-group-text bg-light border-end-0 text-muted small"><i class="bi bi-person"></i></span>
+              <input
+                formControlName="name"
+                type="text"
+                class="form-control ecommerce-input border-start-0 ps-0"
+                placeholder="Your full name"
+                [class.is-invalid]="updatedata.get('name')?.touched && updatedata.get('name')?.invalid"
+              >
+            </div>
+            
+            <div class="error-container">
+              @if(updatedata.get('name')?.touched){
+                @if(updatedata.get('name')?.hasError('required')){ <div class="error-text">Name is required</div> }
+                @if(updatedata.get('name')?.hasError('minlength')){ <div class="error-text">Min 3 characters</div> }
+                @if(updatedata.get('name')?.hasError('maxlength')){ <div class="error-text">Max 14 characters</div> }
+              }
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label small fw-bold text-dark">{{ 'Account Details.Email-Addres' | translate }}</label>
+            <div class="input-group">
+              <span class="input-group-text bg-light border-end-0 text-muted small"><i class="bi bi-envelope"></i></span>
+              <input
+                formControlName="email"
+                type="email"
+                class="form-control ecommerce-input border-start-0 ps-0"
+                placeholder="example@mail.com"
+                [class.is-invalid]="updatedata.get('email')?.touched && updatedata.get('email')?.invalid"
+              >
+            </div>
+            @if(updatedata.get('email')?.touched){
+              @if(updatedata.get('email')?.hasError('required')){ <div class="error-text">Email is required</div> }
+              @if(updatedata.get('email')?.hasError('email')){ <div class="error-text">Invalid email format</div> }
+            }
+          </div>
+
+          <div class="mb-4">
+            <label class="form-label small fw-bold text-dark">{{ 'Account Details.Phone-Number' | translate }}</label>
+            <div class="input-group">
+              <span class="input-group-text bg-light border-end-0 text-muted small"><i class="bi bi-phone"></i></span>
+              <input
+                formControlName="phone"
+                type="text"
+                class="form-control ecommerce-input border-start-0 ps-0"
+                placeholder="01xxxxxxxxx"
+                [class.is-invalid]="updatedata.get('phone')?.touched && updatedata.get('phone')?.invalid"
+              >
+            </div>
+            @if(updatedata.get('phone')?.touched){
+              @if(updatedata.get('phone')?.hasError('required')){ <div class="error-text">Phone number is required</div> }
+              @if(updatedata.get('phone')?.hasError('pattern')){ <div class="error-text">Valid Egyptian number only</div> }
+            }
+          </div>
+
+          <button
+            type="submit"
+            class="btn ecommerce-btn w-100 py-3 shadow-sm mt-2"
+            [disabled]="updatedata.invalid"
+          >
+            <i class="bi bi-check2-circle me-2"></i> 
+            {{ 'Account Details.Save-Changes' | translate }}
+          </button>
+
+        </form>
+
+      </div>
+    </div>
+
+    <div class="text-center mt-4">
+      <a routerLink="/profile" class="text-decoration-none text-muted small hover-primary">
+        <i class="bi bi-arrow-left me-1"></i> Back to Profile
+      </a>
+    </div>
+
+  </div>
+</div>

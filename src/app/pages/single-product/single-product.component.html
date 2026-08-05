@@ -1,0 +1,94 @@
+<div class="container py-3 py-md-5">
+  <div class="row g-4 g-lg-5 align-items-center">
+
+    <!-- Product Image & Gallery Column -->
+    <div class="col-12 col-md-6">
+      <div class="product-gallery text-center">
+        <!-- Main Image Container -->
+        <div class="main-img-container mb-3 mb-md-4 p-3 p-md-4 bg-white rounded-4 shadow-sm d-flex align-items-center justify-content-center">
+          <img
+            [src]="product.imageCover"
+            class="main-img img-fluid rounded-3"
+            style="max-height: 400px; object-fit: contain; width: 100%;"
+            [alt]="product.title"
+          />
+        </div>
+
+        <!-- Thumbnails Gallery -->
+        <div class="d-flex justify-content-center gap-2 gap-md-3 flex-wrap">
+          @for (img of product.images; track $index) {
+            <img
+              [src]="img"
+              class="thumb-img shadow-sm bg-white p-1 rounded-3 cursor-pointer"
+              style="width: 60px; height: 60px; object-fit: cover;"
+              [alt]="'thumbnail ' + $index"
+            />
+          }
+        </div>
+      </div>
+    </div>
+
+    <!-- Product Details Content Column -->
+    <div class="col-12 col-md-6">
+      <div class="product-content ps-md-3 ps-lg-4">
+        
+        <!-- Category Badge & Rating -->
+        <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-2">
+          <span class="badge bg-success bg-opacity-10 text-success px-3 py-2 rounded-pill fw-bold fs-7">
+            {{product.category.name}}
+          </span>
+          <div class="text-warning small d-flex align-items-center">
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-half text-muted"></i>
+            <span class="text-muted ms-1 small">(4.5)</span>
+          </div>
+        </div>
+
+        <!-- Title -->
+        <h1 class="fw-bold text-dark mb-2 mb-md-3 fs-3 fs-md-2">{{product.title}}</h1>
+        
+        <!-- Description -->
+        <p class="text-muted lh-base mb-3 mb-md-4 fs-6">
+          {{product.description}}
+        </p>
+
+        <!-- Price -->
+        <div class="mb-3 mb-md-4">
+          <div class="price-tag">
+            <span class="text-success fw-bold fs-3 fs-md-2">{{product.price | currency:'EGP ' }}</span>
+          </div>
+        </div>
+
+        <!-- Action Button -->
+        <div class="d-grid gap-3">
+          <button (click)="addtocart(product._id)" class="btn btn-add-cart text-white shadow-sm py-2 py-md-3 fs-6 fw-bold rounded-3">
+            <i class="bi bi-cart-plus me-2 fs-5"></i> Add to Shopping Cart
+          </button>
+        </div>
+
+        <!-- Shipping & Warranty Info -->
+        <div class="mt-4 mt-md-5 border-top pt-3 pt-md-4">
+          <div class="row g-3">
+            <div class="col-6">
+              <div class="d-flex align-items-center gap-2">
+                <i class="bi bi-truck text-success fs-4"></i>
+                <span class="small text-muted fw-semibold">Free Shipping</span>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="d-flex align-items-center gap-2">
+                <i class="bi bi-shield-check text-success fs-4"></i>
+                <span class="small text-muted fw-semibold">1 Year Warranty</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>

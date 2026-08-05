@@ -1,0 +1,56 @@
+<div class="verify-container container">
+  <div class="verify-card border-0 shadow-sm text-center">
+
+    <div class="mb-4">
+      <div class="bg-info bg-opacity-10 d-inline-block p-3 rounded-circle mb-3 text-info">
+        <i class="bi bi-chat-left-dots fs-2"></i>
+      </div>
+      <h2 class="fw-bold text-dark">Verify Your Account</h2>
+      <p class="text-muted small px-3">
+        We've sent a 6-digit verification code to your email. Please enter it below to continue.
+      </p>
+    </div>
+
+    <form [formGroup]="restcode" (ngSubmit)="getdata(restcode)">
+      
+      <div class="mb-4">
+        <label class="form-label small fw-bold d-block text-start ms-1">Reset Code</label>
+        <input
+          formControlName="resetCode"
+          type="text" 
+          class="form-control code-input" 
+          placeholder="000000"
+          maxlength="6"
+        >
+        
+        @if(restcode.get('resetCode')?.touched && restcode.get('resetCode')?.hasError('required')){
+          <div class="text-danger small mt-2 text-start">
+            <i class="bi bi-exclamation-circle me-1"></i> Code is required to proceed.
+          </div>
+        }
+      </div>
+
+      <div class="d-grid gap-3">
+        <button 
+          type="submit" 
+          [disabled]="restcode.invalid" 
+          class="btn btn-verify shadow-sm"
+        >
+          Verify Code
+        </button>
+
+        <div class="mt-2">
+          <p class="small text-muted mb-0">Didn't receive the code?</p>
+          <button type="button" class="btn btn-link text-success text-decoration-none small fw-bold p-0">
+            Resend Code
+          </button>
+        </div>
+      </div>
+ @if (iserror) {
+        <div class="alert alert-danger mt-3 py-2 small text-center border-0 shadow-sm">
+          <i class="bi bi-exclamation-triangle me-1"></i> Reset code is invalid or has expired
+        </div>
+      }
+    </form>
+  </div>
+</div>

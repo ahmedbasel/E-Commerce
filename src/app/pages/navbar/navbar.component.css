@@ -1,0 +1,68 @@
+/* تثبيت النيف بار في الأعلى */
+.navbar {
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px); /* تأثير زجاجي خفيف */
+  background-color: rgba(255, 255, 255, 0.95) !important;
+}
+
+/* تأثير الـ Hover على الروابط */
+.nav-link {
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #198754; /* لون البراند الأخضر */
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.nav-link:hover {
+  color: #198754 !important;
+}
+
+/* أيقونات السوشيال ميديا */
+.fab {
+  transition: transform 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+}
+
+.fab:hover {
+  transform: translateY(-3px);
+  color: #198754 !important;
+}
+
+/* الـ Badge الخاص بالسلة */
+.badge {
+  font-size: 0.65rem;
+  padding: 0.35em 0.5em;
+  border: 2px solid white; /* بيفصل اللون الأحمر عن الأيقونة */
+}
+
+/* تنسيق الـ Dropdown */
+.dropdown-menu {
+  border: none;
+  border-radius: 12px;
+  margin-top: 10px !important;
+}
+
+.dropdown-item {
+  padding: 10px 20px;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.dropdown-item:hover {
+  background-color: #f8f9fa;
+  color: #198754;
+  padding-left: 25px; /* حركة بسيطة عند الهوفر */
+}

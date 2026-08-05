@@ -1,0 +1,43 @@
+/* تنسيق الـ Alert لتكون عائمة ومنظمة */
+.custom-alert {
+  border-radius: 50px;
+  border: none;
+  background: linear-gradient(45deg, #198754, #20c997);
+  color: white;
+  animation: slideDown 0.5s ease forwards;
+}
+
+@keyframes slideDown {
+  from { transform: translate(-50%, -100%); opacity: 0; }
+  to { transform: translate(-50%, 20px); opacity: 1; }
+}
+
+/* تنسيق الكارت */
+.wishlist-card {
+  transition: all 0.3s ease;
+  border-radius: 15px !important;
+}
+
+.wishlist-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+}
+
+.wishlist-img {
+  height: 200px;
+  object-fit: cover;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+/* زرار الحذف */
+.btn-delete {
+  background: #fff5f5;
+  color: #dc3545;
+  border: 1px solid #ffc9c9;
+}
+
+.btn-delete:hover {
+  background: #dc3545;
+  color: white;
+}

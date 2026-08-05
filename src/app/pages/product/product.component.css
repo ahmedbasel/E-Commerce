@@ -1,0 +1,55 @@
+
+.card {
+  transition: all 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+}
+
+
+.wishlist-icon {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: white;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  color: #6c757d;
+}
+
+.wishlist-icon:hover {
+  background: #ff4757;
+  color: white;
+  transform: scale(1.1);
+}
+
+
+.page-link {
+  color: #198754;
+  border: none;
+  margin: 0 5px;
+  border-radius: 8px !important;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.page-link:hover {
+  background-color: #198754;
+  color: white;
+}
+
+.page-item.disabled .page-link {
+  background-color: #f8f9fa;
+}i{
+    cursor: pointer;
+}

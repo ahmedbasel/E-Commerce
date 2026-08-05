@@ -1,0 +1,25 @@
+
+@keyframes scaleIn {
+  0% { transform: scale(0); opacity: 0; }
+  60% { transform: scale(1.2); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.success-icon-container {
+  animation: scaleIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+
+.success-card {
+  border-top: 5px solid #198754; 
+  background: #ffffff;
+}
+
+.order-details-box {
+  background-color: #f8f9fa;
+  border: 1px dashed #dee2e6; 
+}
+
+.confetti-text {
+  font-size: 1.2rem;
+}

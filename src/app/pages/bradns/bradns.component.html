@@ -1,0 +1,24 @@
+<div class="container py-4 py-md-5">
+  <!-- Title -->
+  <h2 class="text-center mb-4 mb-md-5 fw-bold fs-3 fs-md-2">{{'brands.our-brands'|translate}}</h2>
+
+  <!-- Brands Grid -->
+  <div class="row g-2 g-md-3 g-lg-4">
+    @for (b of allbrandss; track $index) {
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="card border-0 shadow-sm text-center h-100 brand-card rounded-3 rounded-md-4 overflow-hidden cursor-pointer">
+          <div class="card-img-top d-flex align-items-center justify-content-center bg-light p-3" style="height: 140px;">
+            <img [src]="b.image" [alt]="b.name" class="img-fluid brand-image" style="max-height: 100%; object-fit: contain;">
+          </div>
+          <div class="card-body p-2 p-md-3">
+            <h6 class="card-title text-muted text-truncate mb-0 fs-6 fs-md-6">{{b.name}}</h6>
+          </div>
+        </div>
+      </div>
+    } @empty {
+      <div class="col-12 py-5 text-center">
+        <app-loader></app-loader>
+      </div>
+    }
+  </div>
+</div>

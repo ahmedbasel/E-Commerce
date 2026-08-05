@@ -1,0 +1,48 @@
+
+.verify-container {
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.verify-card {
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  padding: 40px;
+  width: 100%;
+  max-width: 450px;
+}
+
+
+.code-input {
+  letter-spacing: 5px; 
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 12px;
+  border: 2px solid #f1f3f5;
+  background-color: #f8f9fa;
+  padding: 15px;
+}
+
+.code-input:focus {
+  border-color: #198754;
+  background-color: #fff;
+  box-shadow: 0 0 0 4px rgba(25, 135, 84, 0.1);
+}
+
+.btn-verify {
+  background: #198754;
+  border: none;
+  color: white;
+  border-radius: 12px;
+  padding: 14px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-verify:hover:not(:disabled) {
+  background: #146c43;
+}

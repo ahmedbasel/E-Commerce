@@ -1,0 +1,163 @@
+{
+    "navbar":{
+
+        "Home":"Home",
+        "Cart":"Cart",
+        "Product":"Product",
+        "Categories":"Categories",
+        "Brands":"Brands",
+        "Login":"Login",
+        "Register":"Register"
+
+    },
+    "header":{
+        "PopularProducts":"Popular Products",
+        "data":"Update Data ",
+        "password":"Update Password ",
+        "addaddress":"Add Address ",
+        "myaddres":"My Address ",
+        "singout":"Logout"
+
+
+    },
+    
+    "search":{
+        "search-home":"Search for products, brands...",
+        "search-PRO":"What are you looking for?"
+
+    },
+      "cart":{
+         "Title": "Shopping Cart",
+    "Remove": "Remove",
+    "Order-Summary": "Order Summary",
+    "Subtotal": "Subtotal",
+    "Shipping": "Shipping",
+    "Total": "Total",
+    "Checkout": "Proceed to Checkout",
+    "Clear": "Clear Entire Cart",
+    "Empty-Title": "Your cart is empty",
+    "Empty-Desc": "Looks like you haven't added anything yet.",
+    "Start": "Start Shopping"
+
+    },
+    "Category":{
+        "shop":"Shop by Category"
+    },
+    "brands":{
+        "our-brands":"Our Brands"
+    },
+
+    "Account Details":{
+        "Full-Name":"Full Name",
+        "Email-Addres":"Email Addres",
+        "Phone-Number":"Phone Number",
+        "Account-Details":"Account Details",
+        "info":"Keep your personal information up to date",
+        "Save-Changes":"Save Changes"
+    },
+     "password":{
+  "Update-Password": "Update Password",
+  "Password-Info": "Set a strong password to protect your account",
+  "Current-Password": "Current Password",
+  "Current-Password-Required": "Current password is required",
+  "New-Password": "New Password",
+  "Password-Required": "Password is required",
+  "Password-Pattern": "Start with Capital, 6-15 characters",
+  "Confirm-New-Password": "Confirm New Password",
+  "Passwords-Not-Match": "Passwords do not match",
+  "Update-Password-Btn": "Update Password",
+  "Back-To-Profile": "Back to Profile settings"
+ 
+
+    },
+
+    "address": {
+  "Saved-Addresses": "Saved Addresses",
+  "Add-New": "Add New",
+  "Home": "Home",
+  "Delete-Address": "Delete Address",
+  "No-Addresses": "No saved addresses yet.",
+  "Return-To-Profile": "Return to Profile",
+  "delete":"Delete"
+},
+
+  "addresss": {
+    "Shipping-Address": "Shipping Address",
+    "Shipping-Info": "Where should we deliver your orders?",
+    "Recipient-Name": "Recipient Name",
+    "Recipient-Placeholder": "Receiver's full name",
+    "Address-Details": "Address Details",
+    "Address-Placeholder": "Street name, Building, Apt no.",
+    "Contact-Phone": "Contact Phone",
+    "Phone-Placeholder": "01xxxxxxxxx",
+    "City-Area": "City / Area",
+    "City-Placeholder": "e.g. Cairo, Giza...",
+    "Error": "Error, please try again",
+    "Success": "Address added successfully",
+    "Saving": "Saving Address...",
+    "Save-Btn": "Save New Address",
+    "Back": "Back to Addresses"
+  },
+  
+  "footer": {
+    "Description": "FreshCart is your one-stop shop for all your grocery needs. We provide fresh products delivered straight to your doorstep with love and care.",
+    "Shop-Categories": "Shop Categories",
+    "Vegetables-Fruits": "Vegetables & Fruits",
+    "Beverages": "Beverages",
+    "Meats-Seafood": "Meats & Seafood",
+    "Bakery": "Bakery",
+    "Dairy-Eggs": "Dairy & Eggs",
+
+    "Support": "Support",
+    "About-Us": "About Us",
+    "Contact-Support": "Contact Support",
+    "Help-Center": "Help Center",
+    "Terms": "Terms & Conditions",
+    "Privacy": "Privacy Policy",
+
+    "Mobile-Title": "Experience FreshCart on Mobile",
+    "Mobile-Desc": "Download our app to get 15% off your first order.",
+
+    "Payment": "Payment Methods",
+
+    "Copyright": "© 2026 FreshCart. All rights reserved. Created with  by AhmedBasel",
+    "Region": "Region: 🇪🇬 Egypt",
+    "Language": "Language: English (UK)"
+  },
+
+   "checkout": {
+    "Title": "Checkout",
+    "Subtitle": "Complete your order details below",
+    "Address": "Address Details",
+    "Phone": "Phone Number",
+    "City": "City",
+    "Processing": "Processing...",
+    "Pay-Online": "Pay Online",
+    "OR": "OR",
+    "COD": "Cash on Delivery",
+    "Secure": "Your data is secure and encrypted",
+    "Back": "Back to shopping cart",
+        "Address-Placeholder": "Street name, Building number...",
+    "Phone-Placeholder": "e.g. 01xxxxxxxxx",
+    "City-Placeholder": "Your City"
+
+  },
+
+  "Product":{
+    "next":"Next",
+    "perv":"Perv"
+  },
+
+    "toastr": {
+    "successTitle": "Success 🛒",
+    "addToCartSuccess": "Product added to cart successfully"
+  },
+
+  "toastr2": {
+    "successTitle": "Success ❤️",
+    "wishlistAddSuccess": "Product added to wishlist successfully"
+  }
+
+  
+
+}

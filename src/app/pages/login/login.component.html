@@ -1,0 +1,87 @@
+<div class="login-container container py-5">
+  <div class="login-card border-0 shadow-sm">
+    
+    <div class="text-center mb-4">
+      <h2 class="fw-bold text-dark">Welcome Back</h2>
+      <p class="text-muted small">Please enter your details to login</p>
+    </div>
+
+    <form [formGroup]="login" (ngSubmit)="getdata(login)">
+      
+      <div class="mb-3">
+        <label class="form-label small fw-bold">Email Address</label>
+        <div class="input-group">
+          <span class="input-group-text bg-light border-end-0 text-muted small">
+            <i class="bi bi-envelope"></i>
+          </span>
+          <input
+            formControlName="email"
+            type="email"
+            class="form-control ecommerce-input border-start-0 ps-0"
+            placeholder="name@example.com"
+          >
+        </div>
+        
+        @if (login.get('email')?.touched) {
+          @if (login.get('email')?.hasError('required')) {
+            <div class="error-msg text-start"><i class="bi bi-exclamation-circle me-1"></i>Email is required</div>
+          }
+          @if (login.get('email')?.hasError('email')) {
+            <div class="error-msg text-start"><i class="bi bi-exclamation-circle me-1"></i>Please enter a valid email</div>
+          }
+        }
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label small fw-bold">Password</label>
+        <div class="input-group">
+          <span class="input-group-text bg-light border-end-0 text-muted small">
+            <i class="bi bi-lock"></i>
+          </span>
+          <input
+            formControlName="password"
+            type="password"
+            class="form-control ecommerce-input border-start-0 ps-0"
+            placeholder="••••••••"
+          >
+        </div>
+
+        @if (login.get('password')?.touched) {
+          @if (login.get('password')?.hasError('required')) {
+            <div class="error-msg text-start"><i class="bi bi-exclamation-circle me-1"></i>Password is required</div>
+          }
+          
+        }
+      </div>
+
+      <div class="mb-4 text-end">
+        <a routerLink="/forgetpassword" class="text-success text-decoration-none small fw-bold">
+          Forgot Password?
+        </a>
+      </div>
+
+      @if (ISLOADING) {
+        <button class="btn btn-login w-100 shadow-sm" type="button" disabled>
+          <span class="spinner-border spinner-border-sm me-2"></span> Loading...
+        </button>
+      } @else {
+        <button type="submit" [disabled]="login.invalid" class="btn btn-login w-100 shadow-sm">
+          Login
+        </button>
+      }
+
+      @if (ISERROR) {
+        <div class="alert alert-danger mt-3 py-2 small text-center border-0 shadow-sm" role="alert">
+          <i class="bi bi-x-circle me-1"></i> Incorrect email or password
+        </div>
+      }
+
+      <div class="mt-4 text-center">
+        <p class="small text-muted">Don't have an account? 
+          <a routerLink="/register" class="text-success fw-bold text-decoration-none">Register now</a>
+        </p>
+      </div>
+
+    </form>
+  </div>
+</div>

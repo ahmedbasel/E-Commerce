@@ -1,0 +1,49 @@
+<div class="container vh-100 d-flex align-items-center justify-content-center">
+  <div class="card success-card shadow-lg border-0 text-center p-4 p-md-5" style="max-width: 500px; width: 100%;">
+
+    <div class="mb-4">
+      <div
+        class="success-icon-container mx-auto rounded-circle bg-success bg-opacity-10 d-flex align-items-center justify-content-center"
+        style="width: 90px; height: 90px;">
+        <i class="bi bi-check-circle-fill text-success" style="font-size: 3rem;"></i>
+      </div>
+    </div>
+
+    <h2 class="fw-bold text-dark mb-2">Order Confirmed!</h2>
+    <p class="text-muted mb-4 confetti-text">
+      Woohoo! Your order is on its way. 🎉<br>
+      <span class="small">We've sent a confirmation email to your inbox.</span>
+    </p>
+
+    <div class="order-details-box rounded-4 p-3 text-start mb-4">
+      <div class="d-flex justify-content-between mb-2">
+        <span class="text-muted small"><i class="bi bi-hash me-1"></i>Order ID:</span>
+        <span class="fw-bold text-dark">#{{order.id}}</span> </div>
+      
+      <div class="d-flex justify-content-between mb-2">
+        <span class="text-muted small"><i class="bi bi-currency-exchange me-1"></i>Total Amount:</span>
+        <span class="fw-bold text-success">{{order.totalOrderPrice }}</span>
+      </div>
+
+      <div class="d-flex justify-content-between">
+        <span class="text-muted small"><i class="bi bi-credit-card me-1"></i>Payment:</span>
+        <span class="badge bg-secondary-subtle text-secondary border border-secondary-subtle">Cash on Delivery</span>
+      </div>
+    </div>
+
+    <div class="d-grid gap-3">
+      <button routerLink="/home" class="btn btn-success btn-lg rounded-pill fw-bold py-3 shadow-sm">
+        Continue Shopping
+      </button>
+      
+      <button routerLink="/allorders" class="btn btn-outline-dark border-2 rounded-pill fw-bold">
+        <i class="bi bi-box-seam me-2"></i>Track My Order
+      </button>
+    </div>
+
+    <p class="mt-4 text-muted small">
+      Need help? <a href="#" class="text-success text-decoration-none fw-bold">Contact Support</a>
+    </p>
+
+  </div>
+</div>

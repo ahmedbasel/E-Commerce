@@ -1,0 +1,57 @@
+
+.ecommerce-card {
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+}
+
+
+.ecommerce-input {
+  border: 1px solid #edf2f7;
+  border-radius: 10px;
+  padding: 12px 15px;
+  background-color: #f8fafc;
+  transition: all 0.3s ease;
+}
+
+.ecommerce-input:focus {
+  background-color: #fff;
+  border-color: #0d6efd;
+  box-shadow: 0 0 0 4px rgba(13, 110, 253, 0.05);
+}
+
+
+.error-text {
+  color: #dc3545;
+  font-size: 0.75rem;
+  margin-top: 5px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+}
+
+.error-text::before {
+  content: '⚠';
+  margin-right: 5px;
+}
+
+
+.ecommerce-btn {
+  background: linear-gradient(45deg, #0d6efd, #00d2ff);
+  border: none;
+  color: white;
+  border-radius: 10px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+}
+
+.ecommerce-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(13, 110, 253, 0.3);
+}
+
+.ecommerce-btn:disabled {
+  background: #e2e8f0;
+  color: #94a3b8;
+}

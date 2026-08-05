@@ -1,0 +1,44 @@
+
+.ecommerce-card {
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+
+.ecommerce-input {
+  border: 1px solid #f1f3f5;
+  border-radius: 10px;
+  padding: 12px 15px;
+  background-color: #f8f9fa;
+  transition: all 0.3s ease;
+}
+
+.ecommerce-input:focus {
+  background-color: #fff;
+  border-color: #0d6efd;
+  box-shadow: 0 0 0 4px rgba(13, 110, 253, 0.05);
+}
+
+
+.ecommerce-btn {
+  background: #0d6efd;
+  border: none;
+  color: white;
+  border-radius: 10px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.ecommerce-btn:hover:not(:disabled) {
+  background: #0b5ed7;
+  transform: translateY(-1px);
+}
+
+
+.alert {
+  border: none;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}

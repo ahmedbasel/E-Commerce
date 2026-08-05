@@ -1,0 +1,61 @@
+/* تحسين شكل الكاريد */
+.product-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #fff;
+}
+
+.product-card:hover {
+  transform: translateY(-10px); /* حركة خفيفة للأعلى */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* تأثير على الصورة */
+.img-hover {
+  transition: transform 0.5s ease;
+  cursor: pointer;
+  object-fit: cover;
+  height: 250px; /* توحيد ارتفاع الصور */
+}
+
+.product-card:hover .img-hover {
+  transform: scale(1.1); /* زووم خفيف للصورة */
+}
+
+/* زرار إضافة للسلة (Gradient) */
+.btn-gradient {
+  background: linear-gradient(45deg, #28a745, #20c997);
+  border: none;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.btn-gradient:hover {
+  background: linear-gradient(45deg, #218838, #198754);
+  box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+  color: white;
+}
+
+
+.input-group-text {
+  border-radius: 50px 0 0 50px !important;
+  color: #28a745;
+}
+
+.form-control {
+  border-radius: 0 50px 50px 0 !important;
+}
+
+.form-control:focus {
+  box-shadow: none;
+  border-color: #dee2e6;
+}
+
+/* Badge للفئة */
+.category-badge {
+  background-color: #f8f9fa;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  color: #6c757d;
+  display: inline-block;
+}

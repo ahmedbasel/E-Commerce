@@ -1,0 +1,39 @@
+
+.ecommerce-card {
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+
+.address-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background-color: #f8fafc;
+  border: 1px solid #edf2f7;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.address-item:hover {
+  border-color: #cbd5e1;
+  background-color: #f1f5f9;
+}
+
+.address-info p {
+  margin-bottom: 2px;
+}
+
+
+.btn-delete {
+  border-radius: 8px;
+  padding: 6px 12px;
+  transition: all 0.2s;
+}
+
+.btn-delete:hover {
+  background-color: #dc3545;
+  color: white;
+}

@@ -1,0 +1,99 @@
+<div class="container py-4 py-md-5">
+  <!-- Search Input -->
+  <div class="d-flex justify-content-center mb-4 mb-md-5 mt-2 px-2">
+    <div class="input-group shadow-sm border rounded-pill overflow-hidden" style="max-width: 500px; width: 100%;">
+      <span class="input-group-text bg-white border-0 ps-3 ps-md-4">
+        <i class="bi bi-search text-muted"></i>
+      </span>
+      <input 
+        type="text" 
+        class="form-control border-0 py-2 fs-6 shadow-none" 
+        placeholder="{{'search.search-PRO'| translate}}" 
+        [(ngModel)]="searchval"
+      >
+    </div>
+  </div>
+
+  <!-- Products Grid -->
+  <div class="row g-2 g-md-3 g-lg-4">
+    @for (p of allproduct | search:searchval; track p._id) {
+    <div class="col-6 col-md-4 col-lg-3">
+      <div class="card h-100 border-0 shadow-sm rounded-3 rounded-md-4 position-relative overflow-hidden">
+        
+        <div class="wishlist-icon cursor-pointer position-absolute top-0 end-0 z-3 m-2 m-md-3" (click)="addtowishlist(p._id)">
+          <i class="fa-regular fa-heart"></i>
+        </div>
+
+        <div class="overflow-hidden">
+          <img 
+            [src]="p.imageCover" 
+            [routerLink]="['/single', p._id]" 
+            class="card-img-top img-fluid cursor-pointer transition-transform" 
+            style="width: 100%; aspect-ratio: 1/1; object-fit: cover;"
+            alt="{{p.title}}"
+          >
+        </div>
+
+        <div class="card-body d-flex flex-column p-2 p-md-3">
+          <div class="mb-1 mb-md-2">
+            <span class="badge bg-light text-muted fw-normal text-truncate max-w-100">{{ p.category.name }}</span>
+          </div>
+          <h6 class="card-title fw-bold text-dark text-truncate mb-1 mb-md-2 fs-6" [title]="p.title">{{ p.title }}</h6>
+          
+          <!-- Rating -->
+          <div class="mb-2 text-warning small d-flex align-items-center flex-wrap">
+            <div class="d-flex me-1">
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+            </div>
+            <span class="text-muted small ms-1">(4.5)</span>
+          </div>
+
+          <div class="mt-auto">
+            <p class="fw-bold text-success fs-6 fs-md-5 mb-2 mb-md-3">{{ p.price | currency:'EGP ' }}</p>
+            <button (click)="addtocart(p._id)" class="btn btn-success w-100 rounded-pill fw-bold py-2 py-md-2 btn-sm fs-md-6 shadow-sm d-flex align-items-center justify-content-center">
+              <i class="bi bi-bag-plus me-1"></i>
+              <span class="d-none d-sm-inline">Add to Cart</span>
+              <span class="d-inline d-sm-none">Add</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    }
+
+    <!-- Loader -->
+    @if (isLoading) {
+      <div class="col-12 py-5 text-center">
+        <app-loader></app-loader>
+      </div>
+    }
+  </div>
+
+  <!-- Pagination -->
+  <div class="d-flex justify-content-center align-items-center mt-4 mt-md-5">
+    <nav aria-label="Product pagination" class="w-100 max-w-md">
+      <ul class="pagination align-items-center justify-content-center mb-0 px-2">
+        <li class="page-item" [class.disabled]="currentPage === 1">
+          <button class="page-link shadow-sm rounded-start-pill px-2 px-md-3 py-1 py-md-2" (click)="pervpage()">
+            <i class="bi bi-chevron-left me-1"></i>
+            <span class="d-none d-sm-inline">{{'Product.perv'|translate}}</span>
+          </button>
+        </li>
+
+        <li class="mx-2 mx-md-3 fw-bold text-muted small text-uppercase text-center">
+          Page {{ currentPage }} <span class="mx-1 text-secondary opacity-50">of</span> {{ totalPages }}
+        </li>
+
+        <li class="page-item" [class.disabled]="currentPage === totalPages">
+          <button class="page-link shadow-sm rounded-end-pill px-2 px-md-3 py-1 py-md-2" (click)="nextpage()">
+            <span class="d-none d-sm-inline">{{'Product.next'|translate}}</span>
+            <i class="bi bi-chevron-right ms-1"></i>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>

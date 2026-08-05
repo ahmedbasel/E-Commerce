@@ -1,0 +1,45 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+html[lang="ar"] body {
+  font-family: 'Cairo', sans-serif;
+}
+
+/* Custom Modern Toastr Styling */
+#toast-container > div {
+  opacity: 1 !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12) !important;
+  border-radius: 12px !important;
+  padding: 16px 20px 16px 50px !important;
+  backdrop-filter: blur(8px);
+  font-family: inherit;
+}
+
+
+#toast-container > .toast-success {
+  background-color: #10b981 !important; 
+  color: #ffffff !important;
+}
+
+
+#toast-container .toast-title {
+  font-weight: 700 !important;
+  font-size: 0.95rem !important;
+  margin-bottom: 2px !important;
+}
+
+#toast-container .toast-message {
+  font-size: 0.875rem !important;
+  opacity: 0.95;
+}
+
+
+#toast-container > div .toast-progress {
+  height: 4px !important;
+  opacity: 0.4 !important;
+  background-color: #ffffff !important;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}

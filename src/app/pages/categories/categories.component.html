@@ -1,0 +1,29 @@
+<div class="container py-4 py-md-5">
+  <!-- Title -->
+  <h2 class="text-center mb-4 fw-bold fs-3 fs-md-2">{{'Category.shop'|translate}}</h2>
+
+  <!-- Categories Grid -->
+  <div class="row g-2 g-md-3 g-lg-4">
+    @for (c of allcatgory; track $index) {
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="card border-0 shadow-sm rounded-3 rounded-md-4 overflow-hidden text-center h-100 category-card cursor-pointer">
+          <div class="position-relative overflow-hidden">
+            <img 
+              [src]="c.image" 
+              class="card-img-top transition" 
+              style="width: 100%; aspect-ratio: 4/3; object-fit: cover;" 
+              [alt]="c.name"
+            >
+          </div>
+          <div class="card-body p-2 p-md-3">
+            <h6 class="fw-bold text-truncate mb-0 fs-6 fs-md-6">{{c.name}}</h6>
+          </div>
+        </div>
+      </div>
+    } @empty {
+      <div class="col-12 py-5 text-center">
+        <app-loader></app-loader>
+      </div>
+    }
+  </div>
+</div>

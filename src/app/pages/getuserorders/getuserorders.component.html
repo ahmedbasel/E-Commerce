@@ -1,0 +1,36 @@
+<div class="container my-5">
+    <h2 class="text-center mb-4 fw-bold">My Orders</h2>
+  
+    <div class="row g-4">
+  
+      @for (order of orderdata; track $index) {
+        <div class="col-md-6 col-lg-4">
+            <div class="card shadow-sm h-100">
+              <div class="card-body">
+      
+                <div class="d-flex justify-content-between mb-2">
+                  <h5>ORD-{{order.id}}</h5>
+                  <span class="badge bg-success">{{order.paymentMethodType}}</span>
+                </div>
+      
+                <p class="mb-1"><strong>City:</strong> {{order.shippingAddress.city}}</p>
+                <p class="mb-3"><strong>Phone:</strong> {{order.shippingAddress.phone}}</p>
+      
+                <div class="d-flex justify-content-between align-items-center">
+                  <span class="fw-bold text-primary">{{order.totalOrderPrice}} EGP</span>
+                  <button class="btn btn-outline-primary btn-sm">
+                    View Details
+                  </button>
+                </div>
+      
+              </div>
+            </div>
+          </div>
+      }
+  
+  
+   
+  
+    </div>
+  </div>
+  

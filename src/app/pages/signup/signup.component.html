@@ -1,0 +1,99 @@
+<div class="register-container container">
+  <div class="register-card border-0 shadow-sm">
+    
+    <div class="text-center mb-4">
+      <div class="bg-success bg-opacity-10 d-inline-block p-3 rounded-circle mb-3 text-success">
+        <i class="bi bi-person-plus fs-2"></i>
+      </div>
+      <h2 class="fw-bold text-dark">Create Account</h2>
+      <p class="text-muted small">Join FreshCart and start shopping today</p>
+    </div>
+
+    <form [formGroup]="signup" (ngSubmit)="getdata(signup)">
+      
+      <div class="mb-3">
+        <label class="form-label small fw-bold">Full Name</label>
+        <div class="input-group">
+          <span class="input-group-text bg-light border-end-0 text-muted small"><i class="bi bi-person"></i></span>
+          <input formControlName="name" type="text" class="form-control ecommerce-input border-start-0 ps-0" placeholder="Enter your name">
+        </div>
+        @if(signup.get('name')?.touched) {
+          @if(signup.get('name')?.hasError('required')){ <div class="error-msg"><i class="bi bi-exclamation-circle"></i> Name is required</div> }
+          @if(signup.get('name')?.hasError('minlength')){ <div class="error-msg"><i class="bi bi-exclamation-circle"></i> Min 3 characters</div> }
+          @if(signup.get('name')?.hasError('maxlength')){ <div class="error-msg"><i class="bi bi-exclamation-circle"></i> Max 14 characters</div> }
+        }
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label small fw-bold">Email Address</label>
+        <div class="input-group">
+          <span class="input-group-text bg-light border-end-0 text-muted small"><i class="bi bi-envelope"></i></span>
+          <input formControlName="email" type="email" class="form-control ecommerce-input border-start-0 ps-0" placeholder="example@mail.com">
+        </div>
+        @if(signup.get('email')?.touched) {
+          @if(signup.get('email')?.hasError('required')){ <div class="error-msg"><i class="bi bi-exclamation-circle"></i> Email is required</div> }
+          @if(signup.get('email')?.hasError('email')){ <div class="error-msg"><i class="bi bi-exclamation-circle"></i> Invalid email format</div> }
+        }
+      </div>
+
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label class="form-label small fw-bold">Password</label>
+          <div class="input-group">
+            <span class="input-group-text bg-light border-end-0 text-muted small"><i class="bi bi-lock"></i></span>
+            <input formControlName="password" type="password" class="form-control ecommerce-input border-start-0 ps-0" placeholder="••••••••">
+          </div>
+          @if(signup.get('password')?.touched && signup.get('password')?.invalid) {
+             <div class="error-msg" style="font-size: 0.7rem;">Invalid password format</div>
+          }
+        </div>
+
+        <div class="col-md-6 mb-3">
+          <label class="form-label small fw-bold">Confirm Password</label>
+          <div class="input-group">
+            <span class="input-group-text bg-light border-end-0 text-muted small"><i class="bi bi-lock-fill"></i></span>
+            <input formControlName="rePassword" type="password" class="form-control ecommerce-input border-start-0 ps-0" placeholder="••••••••">
+          </div>
+          @if(signup.get('rePassword')?.touched && signup.get('rePassword')?.hasError('didntmatch')){
+            <div class="error-msg"><i class="bi bi-x-circle"></i> Passwords don't match</div>
+          }
+        </div>
+      </div>
+
+      <div class="mb-4">
+        <label class="form-label small fw-bold">Phone Number</label>
+        <div class="input-group">
+          <span class="input-group-text bg-light border-end-0 text-muted small"><i class="bi bi-phone"></i></span>
+          <input formControlName="phone" type="text" class="form-control ecommerce-input border-start-0 ps-0" placeholder="01xxxxxxxxx">
+        </div>
+        @if(signup.get('phone')?.touched) {
+          @if(signup.get('phone')?.hasError('required')){ <div class="error-msg">Phone is required</div> }
+          @if(signup.get('phone')?.hasError('pattern')){ <div class="error-msg">Egyptian number only</div> }
+        }
+      </div>
+
+      @if(ISLOADING){
+        <button class="btn btn-register w-100 shadow-sm" type="button" disabled>
+          <span class="spinner-border spinner-border-sm me-2"></span> Creating Account...
+        </button>
+      } @else {
+        <button type="submit" [disabled]="signup.invalid" class="btn btn-register w-100 shadow-sm">
+          Sign Up
+        </button>
+      }
+
+      @if (IERROR) {
+        <div class="alert alert-danger mt-3 py-2 small text-center border-0 shadow-sm">
+          <i class="bi bi-exclamation-triangle me-1"></i> Account already exists
+        </div>
+      }
+
+      <div class="mt-4 text-center">
+        <p class="small text-muted">Already have an account? 
+          <a routerLink="/login" class="text-success fw-bold text-decoration-none">Login</a>
+        </p>
+      </div>
+
+    </form>
+  </div>
+</div>

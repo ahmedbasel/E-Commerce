@@ -1,0 +1,166 @@
+{
+    "navbar":{
+
+        "Home":"الرئيسية",
+        "Cart":"عربة التسوق",
+        "Product":"المنتجات",
+        "Categories":"الاقسام",
+        "Brands":"العلامات التجارية",
+        "Login":"تسجيل الدخول ",
+        "Register":"انشاء حساب"
+
+    },
+    "header":{
+        "PopularProducts":"المنتجات الشائعة",
+        "data":" تحديث البيانات ",
+        "password":" تحديث الرقم السري",
+        "addaddress":" اضف عنوان",
+        "myaddres":" عنواني",
+        "singout":" تسجيل الخروج"
+
+
+
+
+    },
+
+    "search":{
+    
+        "search-home":"ابحث عن منتج",
+        "search-PRO":"ما الذي تبحث عنه؟"
+    },
+
+    "cart":{
+          "Title": "سلة التسوق",
+    "Remove": "إزالة",
+    "Order-Summary": "ملخص الطلب",
+    "Subtotal": "المجموع الفرعي",
+    "Shipping": "الشحن",
+    "Total": "الإجمالي",
+    "Checkout": "إتمام الشراء",
+    "Clear": "تفريغ السلة بالكامل",
+    "Empty-Title": "سلة التسوق فارغة",
+    "Empty-Desc": "يبدو أنك لم تضف أي منتجات بعد.",
+    "Start": "ابدأ التسوق"
+    },
+    "Category":{
+        "shop":"تسوق حسب الفئة"
+    },
+    "brands":{
+        "our-brands":"علاماتنا التجارية"
+    },
+
+    "Account Details":{
+         "Full-Name": "الاسم الكامل",
+        "Email-Addres": "البريد الإلكتروني",
+       "Phone-Number": "رقم الهاتف",
+      "Account-Details": "تفاصيل الحساب",
+     "info": "حافظ على تحديث معلوماتك الشخصية",
+     "Save-Changes": "حفظ التغييرات"
+    },
+
+    "password":{
+        
+  "Update-Password": "تحديث كلمة المرور",
+  "Password-Info": "قم بتعيين كلمة مرور قوية لحماية حسابك",
+  "Current-Password": "كلمة المرور الحالية",
+  "Current-Password-Required": "كلمة المرور الحالية مطلوبة",
+  "New-Password": "كلمة المرور الجديدة",
+  "Password-Required": "كلمة المرور مطلوبة",
+  "Password-Pattern": "ابدأ بحرف كبير، من 6 إلى 15 حرفًا",
+  "Confirm-New-Password": "تأكيد كلمة المرور الجديدة",
+  "Passwords-Not-Match": "كلمتا المرور غير متطابقتين",
+  "Update-Password-Btn": "تحديث كلمة المرور",
+  "Back-To-Profile": "العودة إلى إعدادات الملف الشخصي"
+
+    },
+
+    "address": {
+  "Saved-Addresses": "العناوين المحفوظة",
+  "Add-New": "إضافة عنوان",
+  "Home": "المنزل",
+  "Delete-Address": "حذف العنوان",
+  "No-Addresses": "لا توجد عناوين محفوظة بعد.",
+  "Return-To-Profile": "العودة إلى الملف الشخصي",
+   "delete":"حذف"
+
+},
+
+
+  "addresss": {
+    "Shipping-Address": "عنوان الشحن",
+    "Shipping-Info": "أين نُسلّم طلباتك؟",
+    "Recipient-Name": "اسم المستلم",
+    "Recipient-Placeholder": "الاسم الكامل للمستلم",
+    "Address-Details": "تفاصيل العنوان",
+    "Address-Placeholder": "اسم الشارع، المبنى، رقم الشقة",
+    "Contact-Phone": "رقم الهاتف",
+    "Phone-Placeholder": "01xxxxxxxxx",
+    "City-Area": "المدينة / المنطقة",
+    "City-Placeholder": "مثل القاهرة، الجيزة...",
+    "Error": "حدث خطأ، حاول مرة أخرى",
+    "Success": "تم إضافة العنوان بنجاح",
+    "Saving": "جارٍ حفظ العنوان...",
+    "Save-Btn": "حفظ العنوان الجديد",
+    "Back": "العودة إلى العناوين"
+  },
+
+  
+  "footer": {
+    "Description": "فريش كارت هو متجرك الشامل لجميع احتياجات البقالة. نوفر منتجات طازجة تصل إلى باب منزلك بكل حب واهتمام.",
+    "Shop-Categories": "تصنيفات التسوق",
+    "Vegetables-Fruits": "خضروات وفواكه",
+    "Beverages": "مشروبات",
+    "Meats-Seafood": "لحوم ومأكولات بحرية",
+    "Bakery": "مخبوزات",
+    "Dairy-Eggs": "ألبان وبيض",
+
+    "Support": "الدعم",
+    "About-Us": "من نحن",
+    "Contact-Support": "تواصل مع الدعم",
+    "Help-Center": "مركز المساعدة",
+    "Terms": "الشروط والأحكام",
+    "Privacy": "سياسة الخصوصية",
+
+    "Mobile-Title": "استمتع بفريش كارت على الهاتف",
+    "Mobile-Desc": "حمّل التطبيق واحصل على خصم 15% على أول طلب",
+
+    "Payment": "طرق الدفع",
+
+    "Copyright": "© 2026 فريش كارت. جميع الحقوق محفوظة. تم الإنشاء بـ  بواسطة AhmedBasel",
+    "Region": "المنطقة: 🇪🇬 مصر",
+    "Language": "اللغة: الإنجليزية (بريطانيا)"
+  },
+
+  
+  "checkout": {
+    "Title": "إتمام الطلب",
+    "Subtitle": "أكمل بيانات طلبك بالأسفل",
+    "Address": "تفاصيل العنوان",
+    "Phone": "رقم الهاتف",
+    "City": "المدينة",
+    "Processing": "جارٍ المعالجة...",
+    "Pay-Online": "الدفع الإلكتروني",
+    "OR": "أو",
+    "COD": "الدفع عند الاستلام",
+    "Secure": "بياناتك آمنة ومشفرة",
+    "Back": "العودة إلى سلة التسوق",
+      "Address-Placeholder": "اسم الشارع، رقم المبنى...",
+    "Phone-Placeholder": "e.g. 01xxxxxxxxx",
+    "City-Placeholder": "مدينتك"
+  },
+  "Product":{
+    "next":"التالي",
+    "perv":"السابق"
+  },
+
+"toastr": {
+    "successTitle": "نجاح 🛒",
+    "addToCartSuccess": "تمت إضافة المنتج إلى السلة بنجاح"
+  },
+
+"toastr2": {
+    "successTitle": "نجاح ❤️",
+    "wishlistAddSuccess": "تمت إضافة المنتج للمفضلة بنجاح"
+  }
+    
+}

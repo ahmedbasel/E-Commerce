@@ -1,0 +1,46 @@
+
+.thumb-img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.thumb-img:hover {
+  border-color: #198754;
+  transform: scale(1.05);
+}
+
+
+.main-img {
+  max-height: 500px;
+  object-fit: contain;
+  transition: opacity 0.4s ease-in-out;
+}
+
+
+.btn-add-cart {
+  background: #198754;
+  border: none;
+  border-radius: 12px;
+  padding: 15px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-add-cart:hover {
+  background: #146c43;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(25, 135, 84, 0.3);
+}
+
+
+.price-tag {
+  background-color: #f0fff4;
+  padding: 10px 20px;
+  border-radius: 50px;
+  display: inline-block;
+}
