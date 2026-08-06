@@ -120,6 +120,7 @@ export class CartComponent {
         } else {
           this.enableordersummary = false;
         }
+         this.getusercart()
       },
       error:(err)=>{
         console.log(err);
