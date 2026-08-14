@@ -1,0 +1,33 @@
+.category-empty {
+  min-height: 350px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.empty-icon {
+  width: 85px;
+  height: 85px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #f8f9fa;
+  border-radius: 50%;
+
+  color: #6c757d;
+  font-size: 38px;
+}
+
+.category-empty h3 {
+  color: #222;
+  font-size: 24px;
+}
+
+.category-empty p {
+  max-width: 500px;
+  line-height: 1.7;
+}

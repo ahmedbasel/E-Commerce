@@ -164,5 +164,10 @@ if (pricegte ) {
 
     return this._HttpClient.get(`https://ecommerce.routemisr.com/api/v1/orders/user/${userid}`)
   }
+getsepecatego(catid:any):Observable<any>{
+
+    return this._HttpClient.get(`https://ecommerce.routemisr.com/api/v1/categories/${catid}`)
+  }
+
 }
  

@@ -1,3 +1,4 @@
+import { Useraddress } from './../../shared/interface/useraddress';
 import { Component,inject } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { from } from 'rxjs';
@@ -5,6 +6,7 @@ import { ProductService } from './../../shared/services/product.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { OrderService } from '../../shared/services/order.service';
 import { TranslatePipe } from '@ngx-translate/core';
+import { get } from 'node:http';
 
 @Component({
   selector: 'app-checkout',
@@ -22,11 +24,53 @@ export class CheckoutComponent {
 
   cartid!:string
   orderData: any;
+  ueserdata:any
   _ProductService=inject(ProductService);
   _ActivatedRoute=inject(ActivatedRoute);
   _ROUTER=inject(Router)
   _order=inject(OrderService)
+
    isloading:boolean=false
+
+   ngOnInit(){
+    this.getuseraddress()
+   }
+
+   getuseraddress(){
+    this._ProductService.getuseraddress().subscribe({
+      next:(res)=>{
+        console.log(res);
+        this.ueserdata=res.data
+        console.log(this.ueserdata);
+        
+      },
+      error:(err)=>{
+        console.log(err);
+        
+      }
+    })
+   }
+onAddressChange(event: Event) {
+
+  const select = event.target as HTMLSelectElement;
+
+console.log(select.value);
+
+
+  const address = this.ueserdata.find(
+  (item: any) => item._id === select.value
+);
+  console.log(address);
+  
+
+  if (address) {
+    this.addressform.patchValue({
+      details: address.details,
+      phone: address.phone,
+      city: address.city
+    });
+  }
+}
 
 
   checkout(form:any){
@@ -65,6 +109,7 @@ export class CheckoutComponent {
           console.log(res);
           this.orderData=res.data
           console.log(this.orderData,"tttttt");
+          this._ProductService.cartItems.set(this.orderData.cartItems.length)
           this._order.setOrder(this.orderData);
           this.isloading=false
           

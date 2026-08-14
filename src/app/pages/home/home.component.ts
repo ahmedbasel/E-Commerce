@@ -10,10 +10,11 @@ import { ToastrService } from 'ngx-toastr';
 import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 import { CartInfo } from '../../shared/interface/cart-info';
 import { AuthService } from '../../shared/services/auth.service';
+import { ShopbycategoryComponent } from "../shopbycategory/shopbycategory.component";
 
 @Component({
   selector: 'app-home',
-  imports: [RouterLink,LoaderComponent,CurrencyPipe,SearchPipe,FormsModule,TranslatePipe],
+  imports: [RouterLink, LoaderComponent, CurrencyPipe, SearchPipe, FormsModule, TranslatePipe, ShopbycategoryComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
@@ -29,7 +30,7 @@ _AuthService=inject(AuthService)
  isloading:boolean=false
   addtowishlsit:boolean=false
    IsLOGIN:boolean=false
-  allcatgory!:Category[];
+ 
    
   ngOnInit():void{
      this.isloading=true
@@ -61,22 +62,10 @@ _AuthService=inject(AuthService)
         
       }
     })
-this.getcategory();
+
   }
 
-getcategory(){
-    this._ProductService.getallcategories().subscribe({
-      next:(res)=>
-      {
-        console.log(res);
-        this.allcatgory=res.data
-      },
-      error:(err)=>{
-        console.log(err);
-        
-      }
-    })
-  }
+
   
   addtocart(id:any){
    if(localStorage.getItem('token')&&this.IsLOGIN){

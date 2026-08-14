@@ -21,6 +21,7 @@ import { CheckoutComponent } from './pages/checkout/checkout.component';
 import { GetuserordersComponent } from './pages/getuserorders/getuserorders.component';
 import { UserAddressComponent } from './pages/user-address/user-address.component';
 import { MyaddressComponent } from './pages/myaddress/myaddress.component';
+import { SinglecategoryComponent } from './pages/singlecategory/singlecategory.component';
 export const routes: Routes = [
     {path:'',redirectTo:'/home',pathMatch:'full'}, 
     {path:'login',component:LoginComponent,title:'login',canActivate:[notloginGuard]},
@@ -31,6 +32,7 @@ export const routes: Routes = [
     {path:'cart',component:CartComponent,title:'Cart',canActivate:[authGuard]},
     {path:'checkout/:cartid',component:CheckoutComponent,title:'Checkout',canActivate:[authGuard]},
     {path:'brands',component:BradnsComponent,title:'Bradns',},
+    {path:'ShopBY/:categID',component:SinglecategoryComponent,title:'ShopBy',},
     {path:'COD',component:CashOrderComponent,title:'COD',canActivate:[authGuard]},
     {path:'allorders',component:GetuserordersComponent,title:'Your Orders',canActivate:[authGuard]},
     {path: 'add-address',component:UserAddressComponent,title:'Add address',canActivate:[authGuard]},
