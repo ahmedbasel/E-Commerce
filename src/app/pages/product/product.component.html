@@ -1,5 +1,10 @@
 <div class="container py-4 py-md-5">
-  <!-- Search Input -->
+
+   <div class="text-center mb-4 mb-md-5">
+    <h2 class="fw-bold mb-2 fs-3 fs-md-2">{{'header.AllProducts'|translate}}</h2>
+    <div class="mx-auto" style="width: 60px; height: 3px; background: #28a745; border-radius: 2px;"></div>
+  </div>
+
   <div class="d-flex justify-content-center mb-4 mb-md-5 mt-2 px-2">
     <div class="input-group shadow-sm border rounded-pill overflow-hidden" style="max-width: 500px; width: 100%;">
       <span class="input-group-text bg-white border-0 ps-3 ps-md-4">
@@ -13,8 +18,57 @@
       >
     </div>
   </div>
+<!-- Filter Toolbar -->
+<div class="row g-3 mb-4 mb-md-5 justify-content-center align-items-center">
+  
+  <!-- Category Select -->
+  <div class="col-12 col-md-4">
+    <div class="input-group shadow-sm border rounded-pill overflow-hidden bg-white">
+      <span class="input-group-text bg-white border-0 ps-3">
+        <i class="bi bi-grid text-muted"></i>
+      </span>
+      <select [formControl]="categoryControl" class="form-select border-0 shadow-none py-2 text-secondary fs-6 cursor-pointer">
+        <option value="">All Categories</option>
+        @for (cat of allCategoryID; track $index) {
+          <option [value]="cat._id">
+            {{cat.name}}
+          </option>
+        }
+      </select>
+    </div>
+  </div>
 
-  <!-- Products Grid -->
+  <div class="col-6 col-md-4">
+    <div class="input-group shadow-sm border rounded-pill overflow-hidden bg-white">
+      <span class="input-group-text bg-white border-0 ps-3">
+        <i class="bi bi-arrow-up-circle text-muted"></i>
+      </span>
+      <input 
+        (keyup)="getproduct()"
+        [(ngModel)]="pricegt"
+        type="number" 
+        class="form-control border-0 py-2 fs-6 shadow-none" 
+        placeholder="Min Price ( More Than )" 
+      >
+    </div>
+  </div>
+
+  <div class="col-6 col-md-4">
+    <div class="input-group shadow-sm border rounded-pill overflow-hidden bg-white">
+      <span class="input-group-text bg-white border-0 ps-3">
+        <i class="bi bi-arrow-down-circle text-muted"></i>
+      </span>
+      <input 
+        (keyup)="getproduct()"
+        [(ngModel)]="pricelt"
+        type="number" 
+        class="form-control border-0 py-2 fs-6 shadow-none" 
+        placeholder="Max Price ( Less Than )" 
+      >
+    </div>
+  </div>
+
+</div>
   <div class="row g-2 g-md-3 g-lg-4">
     @for (p of allproduct | search:searchval; track p._id) {
     <div class="col-6 col-md-4 col-lg-3">
@@ -40,7 +94,6 @@
           </div>
           <h6 class="card-title fw-bold text-dark text-truncate mb-1 mb-md-2 fs-6" [title]="p.title">{{ p.title }}</h6>
           
-          <!-- Rating -->
           <div class="mb-2 text-warning small d-flex align-items-center flex-wrap">
             <div class="d-flex me-1">
               <i class="bi bi-star-fill"></i>
@@ -64,7 +117,6 @@
     </div>
     }
 
-    <!-- Loader -->
     @if (isLoading) {
       <div class="col-12 py-5 text-center">
         <app-loader></app-loader>
@@ -72,7 +124,6 @@
     }
   </div>
 
-  <!-- Pagination -->
   <div class="d-flex justify-content-center align-items-center mt-4 mt-md-5">
     <nav aria-label="Product pagination" class="w-100 max-w-md">
       <ul class="pagination align-items-center justify-content-center mb-0 px-2">

@@ -12,6 +12,7 @@
     },
     "header":{
         "PopularProducts":"المنتجات الشائعة",
+        "AllProducts":"كل المنتجات",
         "data":" تحديث البيانات ",
         "password":" تحديث الرقم السري",
         "addaddress":" اضف عنوان",
@@ -161,6 +162,11 @@
 "toastr2": {
     "successTitle": "نجاح ❤️",
     "wishlistAddSuccess": "تمت إضافة المنتج للمفضلة بنجاح"
+  },
+
+    "toastr3": {
+    "errorTitle": "خطأ ",
+    "error": "قم بتسجيل الدخول اولا"
   }
     
 }

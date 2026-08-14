@@ -15,7 +15,7 @@
       </span>
     </a>
 
-    <!-- Cart Icon -->
+    
     <a routerLink="cart" class="position-relative text-dark text-decoration-none p-1">
       <i class="bi bi-cart3 fs-6"></i>
       <span class="badge bg-success position-absolute top-0 start-100 translate-middle rounded-pill" style="font-size: 0.65rem;">
@@ -23,7 +23,7 @@
       </span>
     </a>
 
-    <!-- User Profile Dropdown -->
+    
     <div class="dropdown border-start ps-2">
       <a class="d-flex align-items-center text-decoration-none dropdown-toggle text-dark p-0" 
          href="#" id="profileDropdownMobile" data-bs-toggle="dropdown">
@@ -60,7 +60,7 @@
 
     <div class="collapse navbar-collapse" id="navbarContent">
 
-      @if(enableNavbar) {
+      
         <ul class="navbar-nav me-auto mb-2 mb-lg-0 align-items-center ms-lg-4">
           <li class="nav-item">
             <a routerLink="home" routerLinkActive="text-primary" class="nav-link fw-bold px-3" (click)="closeNavbar()">{{'navbar.Home' | translate}}</a>
@@ -76,7 +76,7 @@
             <a routerLink="brands" routerLinkActive="text-primary" class="nav-link fw-bold px-3" (click)="closeNavbar()">{{'navbar.Brands' | translate}}</a>
           </li>
         </ul>
-
+     @if(enableNavbar) {
         <div class="d-none d-lg-flex align-items-center gap-4">
           
           <div class="d-none d-xl-flex gap-3 text-muted border-end pe-3">
@@ -133,10 +133,19 @@
       }
 
       @if(!enableNavbar) {
-        <div class="ms-auto d-flex gap-2">
-          <a routerLink="login" class="btn btn-outline-dark rounded-pill px-4 fw-bold" (click)="closeNavbar()">Login</a>
-          <a routerLink="register" class="btn btn-success rounded-pill px-4 fw-bold shadow-sm" (click)="closeNavbar()">Register</a>
-        </div>
+      <div class="d-flex justify-content-center gap-2 text-center">
+  <a routerLink="login"
+     class="btn btn-outline-dark rounded-pill px-4 fw-bold"
+     (click)="closeNavbar()">
+    Login
+  </a>
+
+  <a routerLink="register"
+     class="btn btn-success rounded-pill px-4 fw-bold shadow-sm"
+     (click)="closeNavbar()">
+    Register
+  </a>
+</div>
       }
 
     </div>

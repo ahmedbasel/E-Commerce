@@ -1,0 +1,51 @@
+<div class="row g-2 g-md-3 g-lg-4">
+    @for (p of Relatedproduct.slice(0,4) ; track p._id) {
+    <div class="col-6 col-md-4 col-lg-3">
+      <div class="card h-100 border-0 shadow-sm rounded-3 rounded-md-4 position-relative overflow-hidden">
+      
+
+        <div class="overflow-hidden">
+          <img 
+            [src]="p.imageCover" 
+            [routerLink]="['/single',p.id]" 
+            class="card-img-top img-fluid cursor-pointer transition-transform" 
+            style="width: 100%; aspect-ratio: 1/1; object-fit: cover;"
+            alt="{{p.title}}"
+          >
+        </div>
+
+        <div class="card-body d-flex flex-column p-2 p-md-3">
+          <div class="mb-1 mb-md-2">
+            <span class="badge bg-light text-muted fw-normal text-truncate max-w-100">{{ p.category.name }}</span>
+          </div>
+          <h6 class="card-title fw-bold text-dark text-truncate mb-1 mb-md-2 fs-6" [title]="p.title">{{ p.title }}</h6>
+          
+          <div class="mb-2 text-warning small d-flex align-items-center flex-wrap">
+            <div class="d-flex me-1">
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+            </div>
+            <span class="text-muted small ms-1">(4.5)</span>
+          </div>
+
+          <div class="mt-auto">
+            <p class="fw-bold text-success fs-6 fs-md-5 mb-2 mb-md-3">{{ p.price  }}EGP</p>
+            <button (click)="addtocart(p._id)" class="btn btn-success w-100 rounded-pill fw-bold py-2 py-md-2 btn-sm fs-md-6 shadow-sm d-flex align-items-center justify-content-center">
+              <i class="bi bi-bag-plus me-1"></i>
+              <span class="d-none d-sm-inline">Add to Cart</span>
+              <span class="d-inline d-sm-none">Add</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    }
+
+    @if (isLoading) {
+      <div class="col-12 py-5 text-center">
+        <app-loader></app-loader>
+      </div>
+    }
+  </div>

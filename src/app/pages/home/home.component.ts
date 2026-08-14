@@ -1,5 +1,5 @@
 import { RouterLink } from '@angular/router';
-import { Allproduct } from '../../shared/interface/allproduct';
+import { Allproduct, Category } from '../../shared/interface/allproduct';
 import { ProductService } from './../../shared/services/product.service';
 import { Component, inject } from '@angular/core';
 import { LoaderComponent } from '../loader/loader.component';
@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 import { CartInfo } from '../../shared/interface/cart-info';
+import { AuthService } from '../../shared/services/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -21,17 +22,21 @@ export class HomeComponent {
  _ProductService= inject(ProductService)
  _ToastrService=inject(ToastrService)
  _TranslateService=inject(TranslateService)
-
+_AuthService=inject(AuthService)
  allproduct!:Allproduct[];
  isadd:boolean=false
  searchval:string=''
  isloading:boolean=false
   addtowishlsit:boolean=false
-
+   IsLOGIN:boolean=false
+  allcatgory!:Category[];
+   
   ngOnInit():void{
      this.isloading=true
     localStorage.setItem('currentpage',"home");
-
+  this._AuthService.islogin.subscribe((val)=>{
+      this.IsLOGIN=val;
+    })
     this._ProductService.getsomeproduct().subscribe({
       next:(res)=>{
         // console.log(res);
@@ -56,16 +61,27 @@ export class HomeComponent {
         
       }
     })
-
+this.getcategory();
   }
 
-
+getcategory(){
+    this._ProductService.getallcategories().subscribe({
+      next:(res)=>
+      {
+        console.log(res);
+        this.allcatgory=res.data
+      },
+      error:(err)=>{
+        console.log(err);
+        
+      }
+    })
+  }
   
   addtocart(id:any){
-    // let mytoken=localStorage.getItem('token');
-    this._ProductService.addtocart(id).subscribe({
+   if(localStorage.getItem('token')&&this.IsLOGIN){
+     this._ProductService.addtocart(id).subscribe({
       next:(res)=>{
-        console.log(res,"ccccccccccccccccart");
         this._ProductService.numofcart.set(res.numOfCartItems)
         const title = this._TranslateService.instant('toastr.successTitle');
       const message = this._TranslateService.instant('toastr.addToCartSuccess');
@@ -87,6 +103,24 @@ this._ToastrService.success(message,title, {
         
       }
     })
+   }else{
+    const titleerror = this._TranslateService.instant('toastr3.errorTitle');
+      const messageerror = this._TranslateService.instant('toastr3.error');
+
+this._ToastrService.error(
+ messageerror, titleerror,
+  
+  {
+    timeOut: 3000,
+    progressBar: true,
+    progressAnimation: 'increasing',
+    closeButton: true,
+    positionClass: 'toast-bottom-right',
+    tapToDismiss: true
+  }
+)
+    
+   }
   }
 
   getuserwishlist(){
@@ -111,20 +145,16 @@ this._ToastrService.success(message,title, {
    })
   }
   
+ addtowishlist(id:any){
 
-addtowishlist(id:any){
 
-  //  let mytoken=localStorage.getItem('token')
-
- 
-
-      
-          this._ProductService.addproducttowishlist(id).subscribe({
+    if(localStorage.getItem("token"),this.IsLOGIN){
+        this._ProductService.addproducttowishlist(id).subscribe({
           next:(res)=>
           {
             console.log(res);
             
-          
+            
             
             
             const message2 = this._TranslateService.instant('toastr2.wishlistAddSuccess');
@@ -140,7 +170,7 @@ addtowishlist(id:any){
             this.getuserwishlist()
 
             
-              // this.addtowishlsit=true;
+             
     
          
          
@@ -160,5 +190,31 @@ addtowishlist(id:any){
             
           }
         })
+    }else{
+
+ const titleerror = this._TranslateService.instant('toastr3.errorTitle');
+      const messageerror = this._TranslateService.instant('toastr3.error');
+
+this._ToastrService.error(
+ messageerror, titleerror,
+  
+  {
+    timeOut: 3000,
+    progressBar: true,
+    progressAnimation: 'increasing',
+    closeButton: true,
+    positionClass: 'toast-bottom-right',
+    tapToDismiss: true
+  }
+)
+
+    }
+
+ 
+
+      
+        
       }
+
+    
 }

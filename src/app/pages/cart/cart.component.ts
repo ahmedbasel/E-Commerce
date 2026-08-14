@@ -89,7 +89,6 @@ export class CartComponent {
         this.allproduct=res.data.products
         this.Subtotal=res.data.totalCartPrice
         this.total=this.Subtotal+this.Shipping
-        this._ToastrService.success('donnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnne')
 
 
       },
@@ -105,7 +104,7 @@ export class CartComponent {
 
 
   deleteprodcut(id:any){
-    // let mytoken=localStorage.getItem('token')
+    
     this._ProductService.deleteproductformcart(id).subscribe({
       next:(res)=>
       {

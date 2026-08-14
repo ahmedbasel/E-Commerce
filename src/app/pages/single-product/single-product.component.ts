@@ -6,47 +6,63 @@ import { Allproduct } from '../../shared/interface/allproduct';
 import { ToastrService } from 'ngx-toastr';
 import { CurrencyPipe } from '@angular/common';
 import { TranslateService } from '@ngx-translate/core';
+import { RelatedProductComponent } from "../related-product/related-product.component";
+import { pid } from 'process';
+import { AuthService } from '../../shared/services/auth.service';
 
 @Component({
   selector: 'app-single-product',
-  imports: [CurrencyPipe],
+  imports: [CurrencyPipe, RelatedProductComponent],
   templateUrl: './single-product.component.html',
   styleUrl: './single-product.component.css'
 })
 export class SingleProductComponent {
-
+  IsLOGIN:boolean=false
   _ProductService=inject(ProductService);
   _ActivatedRoute = inject(ActivatedRoute);
  _ToastrService=inject(ToastrService)
+ _AuthService=inject(AuthService)
  _TranslateService=inject(TranslateService)
-
+ categortid:any
   product!:Allproduct;
-  ngOnInit():void{
-    let pid=this._ActivatedRoute.snapshot.params?.['pid'];
-
-    this._ProductService.getspecificProduct(pid).subscribe({
-      next:(res)=>
-      {
-        console.log(res);
-        this.product=res.data
-        
-      },
-      error:(err)=>
-      {
-        console.log(err);
-        
-      }
+  id:any
+ngOnInit(): void {
+this._AuthService.islogin.subscribe((val)=>{
+      this.IsLOGIN=val;
     })
-  }
-  
-  addtocart(id:any){
-   
-    this._ProductService.addtocart(id).subscribe({
-      next:(res)=>{
-        console.log(res,"ccccccccccccccccart");
-        this._ProductService.numofcart.set(res.numOfCartItems)
+  this._ActivatedRoute.params.subscribe({
+    next: (params) => {
 
-const title = this._TranslateService.instant('toastr.successTitle');
+    this.id=  params['pid'];
+
+      this._ProductService.getspecificProduct(this.id).subscribe({
+        next: (res) => {
+          console.log(res);
+          this.product = res.data;
+           localStorage.setItem('currentpage',"single/"+this.id);
+           
+        },
+        error: (err) => {
+          console.log(err);
+        }
+      });
+
+    }
+  });
+
+     
+
+
+}
+
+  
+  
+    addtocart(id:any){
+   if(localStorage.getItem('token')&& this.IsLOGIN){
+     this._ProductService.addtocart(id).subscribe({
+      next:(res)=>{
+        this._ProductService.numofcart.set(res.numOfCartItems)
+        const title = this._TranslateService.instant('toastr.successTitle');
       const message = this._TranslateService.instant('toastr.addToCartSuccess');
 
         
@@ -59,8 +75,6 @@ this._ToastrService.success(message,title, {
   tapToDismiss: true
 });
 
-
-
         
       },
       error:(err)=>{
@@ -68,5 +82,24 @@ this._ToastrService.success(message,title, {
         
       }
     })
+   }else{
+    const titleerror = this._TranslateService.instant('toastr3.errorTitle');
+      const messageerror = this._TranslateService.instant('toastr3.error');
+
+this._ToastrService.error(
+ messageerror, titleerror,
+  
+  {
+    timeOut: 3000,
+    progressBar: true,
+    progressAnimation: 'increasing',
+    closeButton: true,
+    positionClass: 'toast-bottom-right',
+    tapToDismiss: true
   }
+)
+    
+   }
+  }
+
 }

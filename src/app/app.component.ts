@@ -1,5 +1,5 @@
 import { ProductService } from './shared/services/product.service';
-import { Component, inject } from '@angular/core';
+import { Component, effect, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { NavbarComponent } from "./pages/navbar/navbar.component";
 import { FooterComponent } from "./pages/footer/footer.component";
@@ -13,6 +13,8 @@ import { FooterComponent } from "./pages/footer/footer.component";
 })
 export class AppComponent {
   title = 'myapp';
+
+
 
 ngOnInit():void{
   
@@ -48,29 +50,16 @@ ngOnInit():void{
   }
   
 
-  getusercart(){
-     this._ProductService.getusercart().subscribe({
-      next:(res)=>
-      {
-
-        this._ProductService.numofcart.set(res.numOfCartItems)
-
-        console.log(res);
-     
-
-    
-        
-
+ getusercart() {
+  this._ProductService.getusercart().subscribe({
+    next: (res) => {
+  
       
-
-        
-        
-      },
-      error:(err)=>
-      {
-        console.log(err);
-       
-      }
-    })
-  }
+      this._ProductService.numofcart.set(res.numOfCartItems);
+    },
+    error: (err) => {
+      console.log(err);
+    }
+  });
+}
 }

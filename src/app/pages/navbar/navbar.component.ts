@@ -68,7 +68,9 @@ closeNavbar() {
   Signout(){
     localStorage.removeItem('token');
     localStorage.removeItem('username');
+    localStorage.removeItem('gmail');
     this._AuthService.islogin.next(false);
+    
     this.R.navigate(['/login'])
   }
 }

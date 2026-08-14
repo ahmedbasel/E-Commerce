@@ -12,7 +12,14 @@ import { Router, RouterLink } from '@angular/router';
   styleUrl: './login.component.css'
 })
 export class LoginComponent {
+ngOnInit(): void {
 
+             localStorage.setItem('currentpage',"login");
+
+     
+
+
+}
 
   ISERROR:boolean=false;
   ISLOADING:boolean=false;

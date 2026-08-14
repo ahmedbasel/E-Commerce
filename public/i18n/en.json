@@ -12,6 +12,7 @@
     },
     "header":{
         "PopularProducts":"Popular Products",
+        "AllProducts":"All Products",
         "data":"Update Data ",
         "password":"Update Password ",
         "addaddress":"Add Address ",
@@ -156,8 +157,12 @@
   "toastr2": {
     "successTitle": "Success ❤️",
     "wishlistAddSuccess": "Product added to wishlist successfully"
+  },
+
+    "toastr3": {
+    "errorTitle": "error ",
+    "error": "Please login first"
   }
 
-  
 
 }

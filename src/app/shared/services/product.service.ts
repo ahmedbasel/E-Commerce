@@ -15,13 +15,18 @@ export class ProductService {
 
   numofcart=signal(0)
   numoflist=signal(0)
+  cartItems = signal<any[]>([]);
 
+  
   
 
 
   private baseUrl = 'https://ecommerce.routemisr.com/api/v1/products';
 
-  constructor() { }
+  constructor() {
+   
+    
+   }
 
   getsomeproduct():Observable<any>{
      return this._HttpClient.get('https://ecommerce.routemisr.com/api/v1/products')
@@ -31,11 +36,34 @@ export class ProductService {
     return this._HttpClient.get('https://ecommerce.routemisr.com/api/v1/brands');
   }
 
-  getallproduct(page: number, limit: number):Observable<any>{
-    return this._HttpClient.get(
-      `https://ecommerce.routemisr.com/api/v1/products?page=${page}&limit=${limit}`
-    );
+
+
+  getallproduct(
+  page: number,
+  limit: number,
+  category?: string | null,
+  pricelte?:number | null,
+  pricegte?:number | null,
+):Observable<any> {
+
+  let params: any = {
+    page,
+    limit
+  };
+
+  if (category) {
+    params.category = category;
   }
+if (pricelte ) {
+  params['price[lte]'] = pricelte;
+}
+
+if (pricegte ) {
+  params['price[gte]'] = pricegte;
+}
+
+  return this._HttpClient.get('https://ecommerce.routemisr.com/api/v1/products', { params });
+}
 
   getallcategories():Observable<any>{
     return this._HttpClient.get('https://ecommerce.routemisr.com/api/v1/categories')

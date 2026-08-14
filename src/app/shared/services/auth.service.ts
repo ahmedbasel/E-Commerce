@@ -53,8 +53,9 @@ export class AuthService {
   
 
 
-  islogin=new BehaviorSubject(false);
-
+islogin = new BehaviorSubject<boolean>(
+  localStorage.getItem('token') !== null
+);
   login(userdata:Login):Observable<any>{
     return this._HttpClient.post('https://ecommerce.routemisr.com/api/v1/auth/signin',userdata);
   }
@@ -114,8 +115,8 @@ export class AuthService {
         console.log('verified');
         
         console.log(res);
-
-        // this.islogin.next(true)
+         
+      
 
        
 
