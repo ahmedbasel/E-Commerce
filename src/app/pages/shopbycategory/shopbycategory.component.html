@@ -2,13 +2,13 @@
   <div class="container">
 
     <div class="text-center mb-5">
-      <span class="text-uppercase text-muted small fw-semibold">
-        Explore Our Collection
-      </span>
+     
+  <div class="text-center mb-4 ">
+    <h2 class="fw-bold mb-2 fs-3 fs-md-2">Shop by Category</h2>
+    <div class="mx-auto" style="width: 60px; height: 3px; background: #28a745; border-radius: 2px;"></div>
+  </div>
 
-      <h2 class="fw-bold mt-2 mb-2">
-        Shop by Category
-      </h2>
+    
 
       <p class="text-muted">
         Discover your favorite styles
@@ -19,22 +19,21 @@
     
     <div class="row g-4">
 
-  
-      @for (cat of allcategory; track $index) {
-        <div class="col-6 col-lg-3" 
-        [routerLink]="['/ShopBY',cat._id]"
+     @if (allcategory) {
+        <div class="col-6 col-lg-4" 
+        [routerLink]="['/ShopBY',allcategory[1]?._id]"
         >
         <div class="category-card">
 
           <img
-            [src]="cat.image"
+            [src]="allcategory[1]?.image"
             alt="Men"
           >
 
           <div class="category-overlay"></div>
 
           <div class="category-info">
-            <h3>{{cat.name}}</h3>
+            <h3>{{allcategory[1]?.name}}</h3>
 
             <span>
               Shop Now
@@ -44,7 +43,60 @@
 
         </div>
       </div>
-      }
+        <div class="col-6 col-lg-4" 
+        [routerLink]="['/ShopBY',allcategory[2]?._id]"
+        >
+        <div class="category-card">
+
+          <img
+            [src]="allcategory[2]?.image"
+            alt="Men"
+          >
+
+          <div class="category-overlay"></div>
+
+          <div class="category-info">
+            <h3>{{allcategory[2]?.name}}</h3>
+
+            <span>
+              Shop Now
+              <i class="bi bi-arrow-right"></i>
+            </span>
+          </div>
+
+        </div>
+      </div>
+
+
+        <div class="col-6 col-lg-4" 
+        [routerLink]="['/ShopBY',allcategory[9]?._id]"
+        >
+        <div class="category-card">
+
+          <img
+            [src]="allcategory[9]?.image"
+            alt="Men"
+          >
+
+          <div class="category-overlay"></div>
+
+          <div class="category-info">
+            <h3>{{allcategory[9]?.name}}</h3>
+
+            <span>
+              Shop Now
+              <i class="bi bi-arrow-right"></i>
+            </span>
+          </div>
+
+        </div>
+      </div>
+
+      
+     }
+    
+      
+      
 
 
      

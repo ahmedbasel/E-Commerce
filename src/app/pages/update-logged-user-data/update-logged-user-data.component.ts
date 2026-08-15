@@ -39,6 +39,8 @@ export class UpdateLoggedUserDataComponent {
       next:(data)=>{console.log(data);
         console.log('succccccccccces');
         
+        this._AuthService.username.next(data.user.name)
+        
       },
       error:(err)=>{console.log(err);
       }

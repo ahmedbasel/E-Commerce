@@ -25,6 +25,8 @@ export class SinglecategoryComponent {
   IsLOGIN:boolean=false
   _AuthService=inject(AuthService)
    categoryname:any
+
+   filteredproduct:any
 ngOnInit(): void {
 
   this.id = this._ActivatedRoute.snapshot.params['categID'];
@@ -55,19 +57,20 @@ ngOnInit(): void {
 
 
     getproduct(){
-      this._ProductService.getsomeproduct().pipe(
+      this._ProductService.getallproduct(1,100).pipe(
         map((res)=>{
           console.log(res);
-          return res.data.filter((data:any)=>{
+          this.filteredproduct=res.data
+          return this.filteredproduct.filter((data:any)=>{
             return data.category?._id ===this.id
           })
           
         })
       ).subscribe({
         next:(res)=>{
-          console.log(res);
+        
          this.allproduct=res
-         console.log(res);
+         
          
          
           

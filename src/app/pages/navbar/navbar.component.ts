@@ -50,6 +50,10 @@ closeNavbar() {
       this.enableNavbar=val;
     })
 
+    this._AuthService.username.subscribe((val:any)=>{
+      this.user=val
+    })
+
    
   }
 

@@ -13,17 +13,17 @@ import { Updatepassword } from '../interface/updatepassword';
 import { Userpassword } from '../interface/userpassword';
 import { Code } from '../interface/code';
 import { Newdatauser } from '../interface/newdatauser';
-
+import { environment } from '../../../environments/environment';
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-
+  private baseUrl = environment.apiUrl; 
   _HttpClient=inject(HttpClient);
 
   pid=inject(PLATFORM_ID);
     R=inject(Router);
-
+   user:any
 
   constructor() {
     
@@ -45,10 +45,14 @@ export class AuthService {
         this.R.navigate([currentpage]);
 
       }
+
+      
     }
    }
 
 
+   
+username=new BehaviorSubject(localStorage.getItem('username'))  
 
   
 
@@ -57,16 +61,16 @@ islogin = new BehaviorSubject<boolean>(
   localStorage.getItem('token') !== null
 );
   login(userdata:Login):Observable<any>{
-    return this._HttpClient.post('https://ecommerce.routemisr.com/api/v1/auth/signin',userdata);
+    return this._HttpClient.post(`${this.baseUrl}/api/v1/auth/signin`,userdata);
   }
 
   signup(registerdata:Register):Observable<any>{
-    return this._HttpClient.post('https://ecommerce.routemisr.com/api/v1/auth/signup',registerdata);
+    return this._HttpClient.post(`${this.baseUrl}/api/v1/auth/signup`,registerdata);
   }
 
 
   verifytoken(t:any){
-    return this._HttpClient.get<VerifyResponse>('https://ecommerce.routemisr.com/api/v1/auth/verifyToken',{
+    return this._HttpClient.get<VerifyResponse>(`${this.baseUrl}/api/v1/auth/verifyToken`,{
       headers:{
         token:t
       }
@@ -77,11 +81,7 @@ islogin = new BehaviorSubject<boolean>(
   }
 
   updatedata(t:any,updateeddata:Updateuserdata):Observable<any>{
-    return this._HttpClient.put('https://ecommerce.routemisr.com/api/v1/users/updateMe/',updateeddata,{
-      headers:{
-        token:t
-      }
-    })
+    return this._HttpClient.put(`${this.baseUrl}/api/v1/users/updateMe/`,updateeddata)
 
     
   }
@@ -89,23 +89,19 @@ islogin = new BehaviorSubject<boolean>(
 
 
   updatepassword(t:any,updatepassword:Updatepassword):Observable<any>{
-    return this._HttpClient.put('https://ecommerce.routemisr.com/api/v1/users/changeMyPassword',updatepassword,{
-      headers:{
-        token:t
-      }
-    })
+    return this._HttpClient.put(`${this.baseUrl}/api/v1/users/changeMyPassword`,updatepassword)
   }
 
   forgetpassword(userpassword:Userpassword):Observable<any>{
-   return this._HttpClient.post('https://ecommerce.routemisr.com/api/v1/auth/forgotPasswords',userpassword)
+   return this._HttpClient.post(`${this.baseUrl}/api/v1/auth/forgotPasswords`,userpassword)
   }
 
   restcode(code:Code):Observable<any>{
-    return this._HttpClient.post('https://ecommerce.routemisr.com/api/v1/auth/verifyResetCode',code)
+    return this._HttpClient.post(`${this.baseUrl}/api/v1/auth/verifyResetCode`,code)
    }
  
    restpassword(newdata:Newdatauser):Observable<any>{
-    return this._HttpClient.put('https://ecommerce.routemisr.com/api/v1/auth/resetPassword',newdata)
+    return this._HttpClient.put(`${this.baseUrl}/api/v1/auth/resetPassword`,newdata)
    }
 
 

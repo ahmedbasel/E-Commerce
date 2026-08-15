@@ -59,6 +59,7 @@ ngOnInit(): void {
 
 
         this._AuthService.islogin.next(true)
+        this._AuthService.username.next(user)
         this._Router.navigate(['/home'])
         },
         error:(err)=>{console.log(err);
