@@ -16,7 +16,7 @@ export class UserAddressComponent {
   address= new FormGroup({
     name: new FormControl(null,[Validators.required]),
     details: new FormControl(null,[Validators.required]),
-    phone: new FormControl(null,[Validators.required]),
+    phone: new FormControl(null,[Validators.required,Validators.pattern(/^01[0125][0-9]{8}$/)]),
     city: new FormControl(null,[Validators.required])
 
   })
@@ -25,6 +25,7 @@ export class UserAddressComponent {
 _Router=inject(Router)
   iserror!:boolean;
   isloading:boolean=false
+  issuccess:boolean=false
 
   
 
@@ -42,6 +43,10 @@ _Router=inject(Router)
           console.log(res);
           this.iserror=false
           this.isloading=false
+          this.issuccess=true
+          setTimeout(()=>{
+            this.issuccess=false
+          },3000)
           this._Router.navigate(['/My address'])
           
         },

@@ -34,8 +34,8 @@
             <p class="fw-bold text-success fs-6 fs-md-5 mb-2 mb-md-3">{{ p.price  }}EGP</p>
             <button (click)="addtocart(p._id)" class="btn btn-success w-100 rounded-pill fw-bold py-2 py-md-2 btn-sm fs-md-6 shadow-sm d-flex align-items-center justify-content-center">
               <i class="bi bi-bag-plus me-1"></i>
-              <span class="d-none d-sm-inline">Add to Cart</span>
-              <span class="d-inline d-sm-none">Add</span>
+              <span class="d-none d-sm-inline">{{'header.addtocart' |translate}}</span>
+              <span class="d-inline d-sm-none">{{'header.addtocart' |translate}}</span>
             </button>
           </div>
         </div>

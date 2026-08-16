@@ -1,11 +1,9 @@
-/* تثبيت النيف بار في الأعلى */
 .navbar {
   transition: all 0.3s ease;
-  backdrop-filter: blur(10px); /* تأثير زجاجي خفيف */
+  backdrop-filter: blur(10px);
   background-color: rgba(255, 255, 255, 0.95) !important;
 }
 
-/* تأثير الـ Hover على الروابط */
 .nav-link {
   position: relative;
   transition: color 0.3s ease;
@@ -18,7 +16,7 @@
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: #198754; /* لون البراند الأخضر */
+  background-color: #198754;
   transition: width 0.3s ease;
 }
 
@@ -30,7 +28,6 @@
   color: #198754 !important;
 }
 
-/* أيقونات السوشيال ميديا */
 .fab {
   transition: transform 0.3s ease, color 0.3s ease;
   cursor: pointer;
@@ -41,14 +38,12 @@
   color: #198754 !important;
 }
 
-/* الـ Badge الخاص بالسلة */
 .badge {
   font-size: 0.65rem;
   padding: 0.35em 0.5em;
-  border: 2px solid white; /* بيفصل اللون الأحمر عن الأيقونة */
+  border: 2px solid white; 
 }
 
-/* تنسيق الـ Dropdown */
 .dropdown-menu {
   border: none;
   border-radius: 12px;
@@ -64,5 +59,14 @@
 .dropdown-item:hover {
   background-color: #f8f9fa;
   color: #198754;
-  padding-left: 25px; /* حركة بسيطة عند الهوفر */
+  padding-left: 25px; 
+}
+.avatar {
+  width: 30px;
+  height: 30px;
+  background-color: #e9ecef;
+  color: #212529;
+  font-size: 11px;
+  font-weight: bold;
+  border: 1px solid #dee2e6;
 }

@@ -5,14 +5,14 @@ import { log } from 'console';
 import { Allproduct } from '../../shared/interface/allproduct';
 import { ToastrService } from 'ngx-toastr';
 import { CurrencyPipe } from '@angular/common';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 import { RelatedProductComponent } from "../related-product/related-product.component";
 import { pid } from 'process';
 import { AuthService } from '../../shared/services/auth.service';
 
 @Component({
   selector: 'app-single-product',
-  imports: [CurrencyPipe, RelatedProductComponent],
+  imports: [CurrencyPipe, RelatedProductComponent,TranslatePipe],
   templateUrl: './single-product.component.html',
   styleUrl: './single-product.component.css'
 })

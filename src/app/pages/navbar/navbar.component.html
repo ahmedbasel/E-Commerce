@@ -27,21 +27,22 @@
     <div class="dropdown border-start ps-2">
       <a class="d-flex align-items-center text-decoration-none dropdown-toggle text-dark p-0" 
          href="#" id="profileDropdownMobile" data-bs-toggle="dropdown">
-        <div class="avatar-container position-relative">
-          <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" 
-               alt="Profile" width="30" height="30" class="rounded-circle border">
-        </div>
+      <div class="avatar-container position-relative">
+  <div class="avatar rounded-circle d-flex align-items-center justify-content-center">
+    {{ user.slice(0, 2).toUpperCase() }}
+  </div>
+</div>
         <span class="fw-bold ms-1 small d-none d-md-inline">{{ user }}</span>
       </a>
       
       <ul class="dropdown-menu dropdown-menu-end shadow-lg border-0 mt-2" aria-labelledby="profileDropdownMobile">
-        <li class="px-3 py-2 small text-muted text-uppercase fw-bold border-bottom mb-1">Manage Account</li>
+        <li class="px-3 py-2 small text-muted text-uppercase fw-bold border-bottom mb-1">{{'header.Manage Account'|translate}}</li>
         <li><a class="dropdown-item" routerLink="updatedata" (click)="closeNavbar()"><i class="bi bi-person me-2"></i>{{'header.data'|translate}}</a></li>
         <li><a class="dropdown-item" routerLink="Updatepassword" (click)="closeNavbar()"><i class="bi bi-shield-lock me-2"></i>{{'header.password'|translate}}</a></li>
         <li><a class="dropdown-item" routerLink="My address" (click)="closeNavbar()"><i class="bi bi-geo-alt me-2"></i>{{'header.myaddres'|translate}}</a></li>
         
         <li><hr class="dropdown-divider"></li>
-        <li class="px-3 py-1 small text-muted fw-bold">Language</li>
+        <li class="px-3 py-1 small text-muted fw-bold">{{'header.Language' |translate}}</li>
         <div class="d-flex px-3 gap-2 py-2">
           <button (click)="change('en')" class="btn btn-sm btn-outline-secondary flex-grow-1 py-0">EN</button>
           <button (click)="change('ar')" class="btn btn-sm btn-outline-secondary flex-grow-1 py-0">AR</button>
@@ -104,21 +105,22 @@
           <div class="dropdown border-start ps-3">
             <a class="d-flex align-items-center text-decoration-none dropdown-toggle text-dark" 
                href="#" id="profileDropdown" data-bs-toggle="dropdown">
-              <div class="avatar-container position-relative">
-                <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" 
-                     alt="Profile" width="35" height="35" class="rounded-circle border">
-              </div>
+             <div class="avatar-container position-relative">
+  <div class="avatar rounded-circle d-flex align-items-center justify-content-center">
+    {{ user.slice(0, 2).toUpperCase() }}
+  </div>
+</div>
               <span class="fw-bold ms-2 d-none d-md-inline">{{ user }}</span>
             </a>
             
             <ul class="dropdown-menu dropdown-menu-end shadow-lg border-0 mt-3" aria-labelledby="profileDropdown">
-              <li class="px-3 py-2 small text-muted text-uppercase fw-bold border-bottom mb-1">Manage Account</li>
+              <li class="px-3 py-2 small text-muted text-uppercase fw-bold border-bottom mb-1">{{'header.Manage Account'|translate}}</li>
               <li><a class="dropdown-item" routerLink="updatedata"><i class="bi bi-person me-2"></i>{{'header.data'|translate}}</a></li>
               <li><a class="dropdown-item" routerLink="Updatepassword"><i class="bi bi-shield-lock me-2"></i>{{'header.password'|translate}}</a></li>
               <li><a class="dropdown-item" routerLink="My address"><i class="bi bi-geo-alt me-2"></i>{{'header.myaddres'|translate}}</a></li>
               
               <li><hr class="dropdown-divider"></li>
-              <li class="px-3 py-1 small text-muted fw-bold">Language</li>
+              <li class="px-3 py-1 small text-muted fw-bold">{{'header.Language' |translate}}</li>
               <div class="d-flex px-3 gap-2 py-2">
                 <button (click)="change('en')" class="btn btn-sm btn-outline-secondary flex-grow-1">EN</button>
                 <button (click)="change('ar')" class="btn btn-sm btn-outline-secondary flex-grow-1">AR</button>

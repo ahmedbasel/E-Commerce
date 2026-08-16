@@ -16,6 +16,8 @@ export class UpdateLoggedUserDataComponent {
 
   _AuthService= inject(AuthService)
   pid=inject(PLATFORM_ID);
+  Iserror:boolean=false
+  issuccess:boolean=false
 
 
   useremail=localStorage.getItem('gmail')
@@ -40,9 +42,28 @@ export class UpdateLoggedUserDataComponent {
         console.log('succccccccccces');
         
         this._AuthService.username.next(data.user.name)
+        this.issuccess=true
+
+        setTimeout(()=>{
+          this.issuccess=false
+        },3000)
         
       },
       error:(err)=>{console.log(err);
+        this.issuccess=false
+       
+        if(err.status==400){
+
+           this.Iserror=true
+
+           setTimeout(()=>{
+            this.Iserror=false
+           },3000)
+
+          
+
+        }
+        
       }
 
      })

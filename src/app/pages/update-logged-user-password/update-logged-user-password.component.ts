@@ -10,6 +10,8 @@ import { TranslatePipe } from '@ngx-translate/core';
 })
 export class UpdateLoggedUserPasswordComponent {
   _AuthService=inject(AuthService);
+  iserror:boolean=false
+  issuccess:boolean=false
 
 
   updatepassword=new FormGroup({
@@ -40,9 +42,21 @@ export class UpdateLoggedUserPasswordComponent {
         next:(res)=>{console.log(res);
 
           console.log('yeeeeees done');
+          this.issuccess=true
+          setTimeout(()=>{
+            this.issuccess=false
+          },3000)
           
         },
         error:(err)=>{console.log(err);
+          if(err.status==400){
+            this.iserror=true
+            setTimeout(()=>{
+              this.iserror=false
+            },3000)
+
+
+          }
         }
       })
     }

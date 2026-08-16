@@ -4,12 +4,12 @@ import { Component, inject, Input } from '@angular/core';
 import { filter, map } from 'rxjs';
 import { LoaderComponent } from "../loader/loader.component";
 import { ActivatedRoute, RouterLink } from "@angular/router";
-import { TranslateService } from '@ngx-translate/core';
+import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 import { ToastrService } from 'ngx-toastr';
 import { finalize } from 'rxjs';
 @Component({
   selector: 'app-related-product',
-  imports: [LoaderComponent, RouterLink],
+  imports: [LoaderComponent, RouterLink,TranslatePipe],
   templateUrl: './related-product.component.html',
   styleUrl: './related-product.component.css'
 })

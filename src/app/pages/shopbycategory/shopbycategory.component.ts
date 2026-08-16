@@ -1,10 +1,11 @@
 import { ProductService } from './../../shared/services/product.service';
 import { Component, inject } from '@angular/core';
 import { RouterLink } from "@angular/router";
+import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-shopbycategory',
-  imports: [RouterLink],
+  imports: [RouterLink,TranslatePipe],
   templateUrl: './shopbycategory.component.html',
   styleUrl: './shopbycategory.component.css'
 })

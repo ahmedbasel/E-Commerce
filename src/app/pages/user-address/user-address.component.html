@@ -37,6 +37,11 @@
                 [placeholder]="'addresss.Recipient-Placeholder' | translate"
               >
             </div>
+
+
+             @if(address.get('name')?.touched) {
+             @if(address.get('name')?.hasError('required')){ <div class="error-msg"><i class="bi bi-exclamation-circle"></i> Name is required</div> }
+             }
           </div>
 
           <div class="mb-3">
@@ -56,6 +61,10 @@
                 [placeholder]="'addresss.Address-Placeholder' | translate"
               >
             </div>
+
+              @if(address.get('details')?.touched) {
+             @if(address.get('details')?.hasError('required')){ <div class="error-msg"><i class="bi bi-exclamation-circle"></i> details is required</div> }
+             }
           </div>
 
           <div class="mb-3">
@@ -75,6 +84,12 @@
                 [placeholder]="'addresss.Phone-Placeholder' | translate"
               >
             </div>
+
+             @if(address.get('phone')?.touched) {
+             @if(address.get('phone')?.hasError('required')){ <div class="error-msg"><i class="bi bi-exclamation-circle"></i> phone is required</div> }
+             @if(address.get('phone')?.hasError('pattern')){ <div class="error-msg"><i class="bi bi-exclamation-circle"></i> Egyptian number only</div> }
+
+             }
           </div>
 
           <div class="mb-4">
@@ -94,6 +109,9 @@
                 [placeholder]="'addresss.City-Placeholder' | translate"
               >
             </div>
+             @if(address.get('city')?.touched) {
+             @if(address.get('city')?.hasError('required')){ <div class="error-msg"><i class="bi bi-exclamation-circle"></i> city is required</div> }
+             }
           </div>
 
           <div class="status-messages mb-3">
@@ -132,6 +150,9 @@
 
         </form>
 
+
+    
+        
       </div>
     </div>
 

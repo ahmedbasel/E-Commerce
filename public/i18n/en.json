@@ -17,7 +17,17 @@
         "password":"Update Password ",
         "addaddress":"Add Address ",
         "myaddres":"My Address ",
-        "singout":"Logout"
+        "singout":"Logout",
+        "addtocart":"Add To Cart",
+        "New":"NEW COLLECTION",
+        "find":"Find What You",
+        "Love":"Love",
+        "Latest":"Discover our latest products and enjoy exclusive deals.",
+        "Shopnow":"Shop Now",
+        "Related Products":"Related Products",
+        "Language":"Language",
+        "Manage Account":"Manage Account"
+
 
 
     },
@@ -42,7 +52,8 @@
 
     },
     "Category":{
-        "shop":"Shop by Category"
+        "shop":"Shop by Category",
+        "Discover":"Discover your favorite styles"
     },
     "brands":{
         "our-brands":"Our Brands"
