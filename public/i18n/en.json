@@ -38,7 +38,7 @@
 
     },
       "cart":{
-         "Title": "Shopping Cart",
+    "Title": "Shopping Cart",
     "Remove": "Remove",
     "Order-Summary": "Order Summary",
     "Subtotal": "Subtotal",
@@ -49,6 +49,14 @@
     "Empty-Title": "Your cart is empty",
     "Empty-Desc": "Looks like you haven't added anything yet.",
     "Start": "Start Shopping"
+
+    },
+
+    "wishlist":{
+      "MyWishlist":"My Wishlist",
+      "saved":"Items you've saved for later",
+      "empty":"Your wishlist is empty",
+      "Explore":"Explore products"
 
     },
     "Category":{
@@ -149,7 +157,7 @@
     "COD": "Cash on Delivery",
     "Secure": "Your data is secure and encrypted",
     "Back": "Back to shopping cart",
-        "Address-Placeholder": "Street name, Building number...",
+    "Address-Placeholder": "Street name, Building number...",
     "Phone-Placeholder": "e.g. 01xxxxxxxxx",
     "City-Placeholder": "Your City"
 
@@ -173,7 +181,64 @@
     "toastr3": {
     "errorTitle": "error ",
     "error": "Please login first"
-  }
+  },
+
+  "login":{
+    "login":"Login",
+    "loginerror":" Incorrect email or password",
+    "email":"Email is required",
+    "password":"Password is required",
+    "email2":"Please enter a valid email",
+     "welcome": "Welcome Back",
+    "details": "Please enter your details to login",
+    "passwordTitle":"Password",
+     "forgotPassword": "Forgot Password",
+  "noAccount": "Don't have an account?",
+  "register": "Register now"
+  },
+
+"signup": {
+  "signup": "Register",
+  "name": "Name is required",
+  "namemin": "Min 3 characters",
+  "namemax": "Max 14 characters",
+  "email": "Email is required",
+  "password": "Password must start with a cap letter",
+  "repassword": "Passwords don't match",
+  "phone": "Phone is required",
+  "phone2": "Egyptian number only",
+  "email2": "Please enter a valid email",
+  "createAccount": "Create Account",
+  "join": "Join FreshCart and start shopping today",
+  "Fullname":"Full Name",
+  "Confirmpassword":"Confirm Password",
+   "accountalready":"Already have an account? ",
+   "accountExists": "Account already exists"
+},
+"forgetPassword": {
+  "title": "Forgot Password",
+  "description": "Enter your email address and we'll send you a code to reset your password.",
+  "email": "Registered Email",
+  "notRegistered": "There is no user registered with this email address",
+  "sendCode": "Send Reset Code",
+  "backToLogin": "Back to Login"
+},
+"verifyAccount": {
+  "title": "Verify Your Account",
+  "description": "We've sent a 6-digit verification code to your email. Please enter it below to continue.",
+  "invalidCode": "Reset code is invalid or has expired",
+  "verifyCode": "Verify Code",
+  "codereq":"Code is required to proceed."
+},
+"resetPassword": {
+  "title": "Reset Password",
+  "description": "Enter a new password and create a strong new password.",
+  "newPassword": "New Password",
+  "placeholder": "Enter new password",
+  "updatePassword": "Update Password",
+  "passwordHint": "Make sure it starts with a capital letter",
+  "rememberedPassword": "I remembered my password"
+}
 
 
 }

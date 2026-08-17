@@ -2,14 +2,14 @@
   <div class="login-card border-0 shadow-sm">
     
     <div class="text-center mb-4">
-      <h2 class="fw-bold text-dark">Welcome Back</h2>
-      <p class="text-muted small">Please enter your details to login</p>
+      <h2 class="fw-bold text-dark">{{'login.welcome'|translate}}</h2>
+      <p class="text-muted small">{{'login.details'|translate}}</p>
     </div>
 
     <form [formGroup]="login" (ngSubmit)="getdata(login)">
       
       <div class="mb-3">
-        <label class="form-label small fw-bold">Email Address</label>
+        <label class="form-label small fw-bold">{{'Account Details.Email-Addres'|translate}}</label>
         <div class="input-group">
           <span class="input-group-text bg-light border-end-0 text-muted small">
             <i class="bi bi-envelope"></i>
@@ -24,16 +24,16 @@
         
         @if (login.get('email')?.touched) {
           @if (login.get('email')?.hasError('required')) {
-            <div class="error-msg text-start"><i class="bi bi-exclamation-circle me-1"></i>Email is required</div>
+            <div class="error-msg text-start"><i class="bi bi-exclamation-circle me-1"></i>{{'login.email'|translate}}</div>
           }
           @if (login.get('email')?.hasError('email')) {
-            <div class="error-msg text-start"><i class="bi bi-exclamation-circle me-1"></i>Please enter a valid email</div>
+            <div class="error-msg text-start"><i class="bi bi-exclamation-circle me-1"></i>{{'login.email2'|translate}}</div>
           }
         }
       </div>
 
       <div class="mb-3">
-        <label class="form-label small fw-bold">Password</label>
+        <label class="form-label small fw-bold">{{'login.passwordTitle'|translate}}</label>
         <div class="input-group">
           <span class="input-group-text bg-light border-end-0 text-muted small">
             <i class="bi bi-lock"></i>
@@ -48,7 +48,7 @@
 
         @if (login.get('password')?.touched) {
           @if (login.get('password')?.hasError('required')) {
-            <div class="error-msg text-start"><i class="bi bi-exclamation-circle me-1"></i>Password is required</div>
+            <div class="error-msg text-start"><i class="bi bi-exclamation-circle me-1"></i>{{'login.password'|translate}}</div>
           }
           
         }
@@ -56,7 +56,7 @@
 
       <div class="mb-4 text-end">
         <a routerLink="/forgetpassword" class="text-success text-decoration-none small fw-bold">
-          Forgot Password?
+          {{'login.forgotPassword'|translate}}
         </a>
       </div>
 
@@ -72,13 +72,13 @@
 
       @if (ISERROR) {
         <div class="alert alert-danger mt-3 py-2 small text-center border-0 shadow-sm" role="alert">
-          <i class="bi bi-x-circle me-1"></i> Incorrect email or password
+          <i class="bi bi-x-circle me-1"></i> {{'login.loginerror'|translate}}
         </div>
       }
 
       <div class="mt-4 text-center">
-        <p class="small text-muted">Don't have an account? 
-          <a routerLink="/register" class="text-success fw-bold text-decoration-none">Register now</a>
+        <p class="small text-muted">{{'login.noAccount'|translate}}
+          <a routerLink="/register" class="text-success fw-bold text-decoration-none">{{'login.register'|translate}}</a>
         </p>
       </div>
 

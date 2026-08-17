@@ -1,19 +1,15 @@
 <div class="container py-4 py-md-5">
   
   
-  @if (isadd) {
-    <div class="alert custom-alert text-center position-fixed top-0 start-50 translate-middle-x shadow-lg px-3 px-md-5 py-2 py-md-3 mt-3 rounded-pill fs-6" role="alert" style="z-index: 2000; max-width: 90vw;">
-      <i class="bi bi-check2-circle me-2"></i> Product added to cart successfully
-    </div>
-  }
+ 
 
 
   <div class="text-center mb-4 mb-md-5">
     <h2 class="fw-bold fs-3 fs-md-2">
       <i class="fa-solid fa-heart text-danger animate__animated animate__heartBeat animate__infinite me-1"></i>
-      My Wishlist
+      {{'wishlist.MyWishlist'|translate}}
     </h2>
-    <p class="text-muted small fs-md-6 mb-0">Items you've saved for later</p>
+    <p class="text-muted small fs-md-6 mb-0">  {{'wishlist.saved'|translate}}</p>
   </div>
 
 
@@ -49,12 +45,11 @@
       </div>
     }
 
-    <!-- Empty State -->
     @if (allproduct.length === 0) {
       <div class="col-12 text-center py-5">
         <i class="bi bi-heartbreak text-muted mb-3 d-block" style="font-size: 3.5rem;"></i>
-        <h4 class="text-muted fs-5 fs-md-4">Your wishlist is empty</h4>
-        <button routerLink="/home" class="btn btn-outline-primary mt-3 rounded-pill px-4">Explore Products</button>
+        <h4 class="text-muted fs-5 fs-md-4">  {{'wishlist.empty'|translate}}</h4>
+        <button routerLink="/home" class="btn btn-outline-primary mt-3 rounded-pill px-4">  {{'wishlist.Explore'|translate}}</button>
       </div>
     }
   </div>

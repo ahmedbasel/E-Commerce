@@ -3,11 +3,11 @@ import { AuthService } from './../../shared/services/auth.service';
 import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { isErrored } from 'stream';
-import { _ } from '@ngx-translate/core';
+import { _, TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-signup',
-  imports: [ReactiveFormsModule,RouterLink],
+  imports: [ReactiveFormsModule,RouterLink,TranslatePipe],
   templateUrl: './signup.component.html',
   styleUrl: './signup.component.css'
 })

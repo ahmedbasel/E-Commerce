@@ -1,10 +1,12 @@
+import { TranslatePipe } from '@ngx-translate/core';
 import { Allproduct } from '../../shared/interface/allproduct';
 import { ProductService } from './../../shared/services/product.service';
 import { Component, effect, inject } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-wishlist',
-  imports: [],
+  imports: [TranslatePipe,RouterLink],
   templateUrl: './wishlist.component.html',
   styleUrl: './wishlist.component.css'
 })

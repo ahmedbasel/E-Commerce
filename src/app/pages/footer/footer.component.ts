@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { TranslatePipe } from '@ngx-translate/core';
+import { TranslationService } from '../../shared/services/translation.service';
 
 @Component({
   selector: 'app-footer',
@@ -8,5 +9,13 @@ import { TranslatePipe } from '@ngx-translate/core';
   styleUrl: './footer.component.css'
 })
 export class FooterComponent {
+ _TranslateService=inject(TranslationService)
 
+  change(lan:any){
+
+    
+    this._TranslateService.changelan(lan)
+
+    
+  }
 }

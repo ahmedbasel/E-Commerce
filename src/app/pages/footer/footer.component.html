@@ -81,14 +81,25 @@
           </span>
         </div>
 
-        <div class="col-md-6 text-md-end mt-2 mt-md-0">
-          <span class="me-3">
-            {{ 'footer.Region' | translate }}
-          </span>
-          <span>
-            {{ 'footer.Language' | translate }}
-          </span>
-        </div>
+       <div class="col-md-6 text-md-end mt-2 mt-md-0 d-flex justify-content-md-end align-items-center gap-2">
+
+  <span class="me-2">
+    {{ 'footer.Language' | translate }}
+  </span>
+
+  <button
+    (click)="change('en')"
+    class="btn btn-sm btn-outline-secondary py-0 px-2">
+    EN
+  </button>
+
+  <button
+    (click)="change('ar')"
+    class="btn btn-sm btn-outline-secondary py-0 px-2">
+    AR
+  </button>
+
+</div>
 
       </div>
     </div>

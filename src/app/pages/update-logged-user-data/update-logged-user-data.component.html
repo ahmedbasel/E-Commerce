@@ -30,9 +30,9 @@
             
             <div class="error-container">
               @if(updatedata.get('name')?.touched){
-                @if(updatedata.get('name')?.hasError('required')){ <div class="error-text">Name is required</div> }
-                @if(updatedata.get('name')?.hasError('minlength')){ <div class="error-text">Min 3 characters</div> }
-                @if(updatedata.get('name')?.hasError('maxlength')){ <div class="error-text">Max 14 characters</div> }
+                @if(updatedata.get('name')?.hasError('required')){ <div class="error-text">{{'signup.name'|translate}}</div> }
+                @if(updatedata.get('name')?.hasError('minlength')){ <div class="error-text">{{'signup.namemin'|translate}}</div> }
+                @if(updatedata.get('name')?.hasError('maxlength')){ <div class="error-text">{{'signup.namemax'|translate}}</div> }
               }
             </div>
           </div>
@@ -50,8 +50,8 @@
               >
             </div>
             @if(updatedata.get('email')?.touched){
-              @if(updatedata.get('email')?.hasError('required')){ <div class="error-text">Email is required</div> }
-              @if(updatedata.get('email')?.hasError('email')){ <div class="error-text">Invalid email format</div> }
+              @if(updatedata.get('email')?.hasError('required')){ <div class="error-text">{{'signup.email'|translate}}</div> }
+              @if(updatedata.get('email')?.hasError('email')){ <div class="error-text">{{'signup.email2'|translate}}</div> }
             }
           </div>
 
@@ -68,8 +68,8 @@
               >
             </div>
             @if(updatedata.get('phone')?.touched){
-              @if(updatedata.get('phone')?.hasError('required')){ <div class="error-text">Phone number is required</div> }
-              @if(updatedata.get('phone')?.hasError('pattern')){ <div class="error-text">Valid Egyptian number only</div> }
+              @if(updatedata.get('phone')?.hasError('required')){ <div class="error-text">{{'signup.phone'|translate}}</div> }
+              @if(updatedata.get('phone')?.hasError('pattern')){ <div class="error-text">{{'signup.phone2'|translate}}</div> }
             }
           </div>
 
